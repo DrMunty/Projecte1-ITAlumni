@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #FFFFFF;
+    font-family: "Source Sans 3", sans-serif;
+}
+
+header {
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+}
+
+.nav_links li {
+    display: inline-block;
+    padding: 0px 20px;
+    position: relative;
+}
+
+.nav_links li a.active {
+    color: #DF007F;
+    font-weight: 700;
+}
+
+.nav_links li a.active::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 20px;
+    right: 20px;
+    height: 4px;
+    background: #DF007F;
+    border-radius: 10px;
+}
+
+.nav_links li a:hover {
+    background: linear-gradient(#873AAA, #DF007F);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    display: inline-block;
+}
+
+.nav_actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.btn-outline, .btn-full {
+    padding: 8px 20px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn-outline {
+    border: 2px solid #DF007F;
+    color: #DF007F;
+    background: transparent;
+}
+
+.btn-full {
+    background: linear-gradient(90deg, #873AAA, #DF007F);
+    color: white;
+    border: none;
+}
+
+.btn-full:hover, .btn-outline:hover {
+    transform: translateY(-4px);
+    filter: brightness(1.2);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.logo {
+    height: 45px;
+    width: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    filter: brightness(1.2);
+}
