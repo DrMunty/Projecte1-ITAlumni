@@ -1,7 +1,16 @@
-import '/.style.css'
-import {Home} from './pages/Home'
-import {Jobs} from './pages/Jobs'
-import {Networking} from './pages/Networking'
-import {setupNavbar} from './components/navbar'
+import './style.css';
+import { createNavbar } from './components/navbar';
+
+const app = document.querySelector<HTMLDivElement>('#app');
+
+if (app) {
+    app.innerHTML = createNavbar() + `
+        <main>
+            <section class="hero">
+                <h1>Benvinguts</h1>
+            </section>
+        </main>
+    `;
+}
 
 
