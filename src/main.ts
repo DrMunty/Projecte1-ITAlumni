@@ -1,4 +1,6 @@
-import {Home} from './pages/Home'
-import {Jobs} from './pages/Jobs'
-import {Networking} from './pages/Networking'
-
+import '../styles/style.css';
+import { createHomePage } from './components/Home';
+const app = document.querySelector<HTMLDivElement>('#app');
+if (app) {
+    app.appendChild(createHomePage()); 
+}
