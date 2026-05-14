@@ -80,7 +80,7 @@ header{
     background: transparent;
 }
 
-.btn-full {
+.btn-nav-full {
     background: linear-gradient(90deg, #873AAA, #DF007F);
     color: white;
     border: none;

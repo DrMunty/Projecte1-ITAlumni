@@ -1,5 +1,5 @@
-import './styles/navbar.css';
-import './styles/home.css';
+import '../styles/navbar.css';
+import '../styles/home.css';
 import { createNavbar } from './components/navbar';
 import { createHomePage } from './components/Home';
 const app = document.querySelector<HTMLDivElement>('#app');
