@@ -1,5 +1,5 @@
 export function createHomePage(): HTMLElement {
-  const container = document.createElement("div"); // Cambiado a div para evitar main dentro de main
+  const container = document.createElement("div");
   container.className = "home-page-wrapper";
 
   container.innerHTML = `
