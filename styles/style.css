@@ -77,8 +77,9 @@
 }
 
 .btn-full:hover, .btn-empty:hover {
-    filter: brightness(1.1);
-    transform: translateY(-2px);
+    transform: translateY(-4px);
+    filter: brightness(1.2);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
 }
 
 .image-container {
@@ -93,4 +94,179 @@
     border-radius: 16px;
     box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
     object-fit: cover;
+}
+
+.benefits{
+    padding: 80px 10%;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.benefits-title h2 {
+    font-size: 32px;
+    font-weight: 400;
+    color: #171A1F;
+    margin-bottom: 60px;
+}
+
+.benefits-container {
+    display: flex;            
+    flex-direction: row;      
+    justify-content: center;  
+    gap: 40px;                
+    width: 100%;
+    max-width: 1200px;       
+    margin: 0 auto;          
+}
+
+
+.benefits-card {
+    flex: 1;                  
+    display: flex;
+    flex-direction: column;  
+    align-items: center;
+    text-align: center;
+}
+
+.benefits-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.benefits-text {
+    font-size: 16px;
+    line-height: 26px;
+    color: #565E6C;
+    margin-bottom: 20px;
+    max-width: 300px;
+}
+
+.btn-benefits {
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+
+.btn-benefits.full {
+    background-color: #FDF2F9; 
+    color: #DF007F;
+}
+
+
+.btn-benefits.light {
+    background-color: #FDF2F9; 
+    color: #DF007F;
+}
+
+.btn-benefits:hover {
+    transform: translateY(-3px);
+    filter: brightness(0.95);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    background: linear-gradient(90deg, #873AAA, #DF007F);
+    color: white;
+   
+}
+
+.opinions-icon{
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.opinions{
+    padding: 80px 5%;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.user-info h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+    color: #171A1F;
+}
+
+.stars {
+    color: #FFB31F;
+    font-size: 16px;
+    margin-top: 4px;
+}
+
+.opinions-title h2{
+    font-size: 36px;
+    font-weight: 400;
+    color: #171A1F;
+    margin-bottom: 50px;
+}
+
+.opinions-container {
+    display: flex;               
+    justify-content: center;  
+    gap: 24px;                
+    flex-wrap: wrap         
+}
+
+.opinions-card{
+background: #ffffff;
+    border: 1px solid #F3F4F6;
+    border-radius: 16px;
+    padding: 32px;
+    width: 380px;
+    text-align: left;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); 
+}
+
+.opinions-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.opinions-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #323842;
+    margin: 0;
+}
+
+.opinions-nav {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.nav-arrow {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    background-color: #F3F4F6;
+    color: #565E6C;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.nav-arrow:hover {
+    background-color: #DF007F; 
+    color: #FFFFFF;           
+    transform: translateY(-3px); 
+    box-shadow: 0 4px 12px rgba(223, 0, 127, 0.3); 
+}
+
+.nav-arrow:active {
+    transform: translateY(-1px);
 }
