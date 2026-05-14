@@ -73,7 +73,7 @@ export function createHomePage(): HTMLElement {
                      <img src= "/img/coche.png" alt= "Q2 color verde manzana" class = "opinions-icon">
                      <div class = "user-info">
                      <h3> Q2 Verde Manzana</h3>
-                     <div class = "stars"> ★★★★★ </div>
+                     <div class = "stars"> ★★ </div>
                      </div>
                     </div>
                     <p class = "opinions-text">
@@ -86,7 +86,7 @@ export function createHomePage(): HTMLElement {
                      <img src= "/img/durisimo.jpeg" alt= "A strange face" class = "opinions-icon">
                      <div class = "user-info">
                      <h3> Strange Face</h3>
-                     <div class = "stars"> ★★★★★ </div>
+                     <div class = "stars"> ★★★ </div>
                      </div>
                     </div>
                     <p class = "opinions-text">
