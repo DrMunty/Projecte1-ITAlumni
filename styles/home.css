@@ -13,17 +13,13 @@
     padding-top: 60px;
 }
 
-.hero {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
 
 .hero-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+   
 }
 
 .hero-text h1 {
@@ -50,6 +46,7 @@
     display: flex;
     gap: 20px;
     margin-bottom: 60px;
+
 }
 
 .hero .btn-full, .btn-empty {
@@ -63,10 +60,12 @@
     transition: transform 0.2s;
 }
 
-.btn-full {
+.hero .btn-full {
     background: var(--primary-gradient);
     color: white;
     border: none;
+    justify-content: center;
+    
 }
 
 .btn-empty {
