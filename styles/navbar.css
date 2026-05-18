@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap');
 
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -11,52 +11,70 @@ body {
     font-family: "Source Sans 3", sans-serif;
 }
 
-header {
-    
+.main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 5%;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid #F3F4F6;
+    background-color: #FFFFFF;
 }
 
-header{
+
+
+.nav-left {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 30px 10%;
+    gap: 200px; 
+}
+.nav_links {
+    list-style: none;
+    display: flex;
+    gap: 40px; 
 }
 
 .nav_links li {
-    display: inline-block;
-    padding: 0px 20px;
     position: relative;
+    display: flex;
+    justify-content: center;
 }
 
-.nav_links li a.active {
+.nav_links li a {
+    display: inline-block;
+    padding: 10px 16px;
+    color: #565E6C;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+
+.nav_links li a.active,
+.nav_links li a:hover {
     color: #DF007F;
-    font-weight: 700;
 }
 
-.nav_links li a.active::after {
+
+.nav_links li a::after {
     content: "";
     position: absolute;
-    bottom: -10px;
-    left: 20px;
-    right: 20px;
-    height: 4px;
+    bottom: 0px; 
+    left: 50%;
+    transform: translateX(-50%); 
+    width: 0; 
+    height: 3px;
     background: #DF007F;
-    border-radius: 10px;
+    border-radius: 4px;
+    transition: width 0.3s ease;
 }
 
-.nav_links li a:hover {
-    background: linear-gradient(#873AAA, #DF007F);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-    display: inline-block;
+.nav_links li a.active::after,
+.nav_links li a:hover::after {
+    width: 70%; 
 }
+
+
 
 .nav_actions {
     display: flex;
@@ -64,41 +82,54 @@ header{
     align-items: center;
 }
 
-.btn-outline, .btn-full {
-    padding: 8px 20px;
-    border-radius: 12px;
+
+.nav-btn-outline, .nav-btn-full {
+    padding: 10px 20px;
+    border-radius: 8px; 
     font-size: 14px;
     font-weight: 600;
+    font-family: "Source Sans 3", sans-serif;
+    cursor: pointer;
     transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
+    gap: 8px; 
+    text-decoration: none;
 }
 
-.btn-outline {
-    border: 2px solid #DF007F;
+.nav-btn-outline {
+    border: 1px solid #DF007F;
     color: #DF007F;
     background: transparent;
 }
 
-.btn-full {
+.nav-btn-full {
     background: linear-gradient(90deg, #873AAA, #DF007F);
     color: white;
     border: none;
 }
 
-.btn-full:hover, .btn-outline:hover {
-    transform: translateY(-4px);
-    filter: brightness(1.2);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+.nav-btn-full:hover, .nav-btn-outline:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+    box-shadow: 0 4px 10px rgba(223, 0, 127, 0.15);
 }
 
+.btn-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+
 .logo {
-    height: 45px;
+    height: 35px; /* Ajustado para que quede proporcional a los botones */
     width: auto;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: filter 0.3s ease;
+    margin-top: -10px;
 }
 
 .logo:hover {
-    filter: brightness(1.2);
+    filter: brightness(1.1);
 }
