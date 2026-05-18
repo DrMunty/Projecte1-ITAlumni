@@ -85,15 +85,14 @@
     padding: 0 20px;
 }
 
-.main-image {
+.main-video {
     width: 100%;
     max-width: 1100px;
-    height: auto;
+    aspect-ratio: 16 / 9;
     border-radius: 16px;
     box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
-    object-fit: cover;
+    pointer-events: none;
 }
-
 .benefits{
     padding: 80px 10%;
     text-align: center;
