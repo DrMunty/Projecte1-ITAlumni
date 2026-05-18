@@ -1,19 +1,27 @@
 export function createNavbar(): string {
     return `
-    <header>
-        <img class="logo" src="/logo.png" alt="logo">
-        <nav>
-            <ul class="nav_links">
-                <li><a href="#" class="active">Inici</a></li>
-                <li><a href="#">Xarxa</a></li>
-                <li><a href="#">Oportunitats de feina</a></li>
-            </ul>
-        </nav>
+    <header class="main-header">
+        <div class="nav-left">
+            <img class="logo" src="icons/logo-letters.png" alt="XL_UMNI logo">
+            
+            <nav>
+                <ul class="nav_links">
+                    <li><a>Inici</a></li> <li><a>Xarxa</a></li>
+                    <li><a>Oportunitats de feina</a></li>
+                </ul>
+            </nav>
+        </div>
+        
         <div class="nav_actions">
-            <a href="#" class="btn-outline">Apunta't</a>
-            <a href="#" class="btn-full">Com et veuen?</a>
+            <button class="nav-btn-outline">
+                <img src="icons/Icon.png" alt="" class="btn-icon"> 
+                Apunta't
+            </button>
+            <button class="nav-btn-full">
+                <img src="icons/Icon2.png" alt="" class="btn-icon"> 
+                Com et veuen?
+            </button>
         </div>
     </header>
     `;
 }
-
