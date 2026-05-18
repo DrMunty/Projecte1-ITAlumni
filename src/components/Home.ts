@@ -15,8 +15,15 @@ export function createHomePage(): HTMLElement {
                         <button class="btn-empty">Mira que fem</button>
                     </div>
                     <div class="image-container">
-                        <img class="main-image" src="../icons/Image 28.png" alt="Alumnes col·laborant" />
-                    </div>
+    <div class="image-container">
+    <iframe class="main-video" 
+        src="https://www.youtube.com/embed/C2V8-4owXxc?autoplay=1&mute=1&controls=0&loop=1&playlist=C2V8-4owXxc&playsinline=1" 
+        frameborder="0" 
+        allow="autoplay; encrypted-media" 
+        allowfullscreen>
+    </iframe>
+</div>
+</div>
                 </div>
             </section>
             <section class = "benefits">
