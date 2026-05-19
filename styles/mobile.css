@@ -292,3 +292,111 @@
     /* Filtre exacte per convertir una imatge al teu rosa corporatiu (#DF007F) */
     filter: invert(24%) sepia(87%) saturate(5479%) hue-rotate(318deg) brightness(97%) contrast(106%);
 }
+
+/* ==========================================================================
+   JOB PORTAL PAGE - MOBILE CONTENT
+   ========================================================================== */
+
+.jobs-content {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0px 24px 100px 24px; /* Sense padding dalt perquè hi van els filtres */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Barra de Filtres */
+.jobs-filters {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0 20px 0;
+}
+
+.filter-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 13px;
+    color: #565E6C;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.filter-icon {
+    font-size: 10px; /* Si fas servir una icona PNG, aquí aniria width: 14px; */
+}
+
+/* Targetes de feina */
+.jobs-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.job-list-card {
+    background: #FFFFFF;
+    border: 1px solid #F3F4F6;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Estira els elements perquè quedin alineats */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.job-info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    justify-content: space-between; /* Reparteix l'espai per donar lloc al botó */
+}
+
+.job-info-text h3 {
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #171A1F;
+}
+
+.job-role {
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 12px;
+    color: #9095A0;
+}
+
+.job-details {
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 12px;
+    color: #9095A0;
+    margin-bottom: 6px; /* Espai abans del botó */
+}
+
+/* Botó "Apply Now" */
+.btn-apply {
+    background: transparent;
+    border: 1px solid #DF007F;
+    color: #DF007F;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    width: max-content; /* Ocupa només el que necessita el text */
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-apply:active {
+    background-color: #FFF2F9;
+}
+
+/* Requadre gris de la foto (Més quadrat i gran a les ofertes) */
+.job-photo-placeholder {
+    width: 80px;
+    height: 90px;
+    background-color: #E5E7EB;
+    border-radius: 8px;
+    flex-shrink: 0;
+}

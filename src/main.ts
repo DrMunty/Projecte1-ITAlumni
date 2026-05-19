@@ -13,6 +13,7 @@ import { createMobileNavbar } from './components/mobileNavbar';
 
 import { createMobileHomeLayout } from './components/mobileHome';
 import { createMobileNetworkingLayout } from './components/mobileNetworking'
+import { createMobileJobsLayout } from './components/mobileJobs';
 
 const app = document.querySelector<HTMLDivElement>('#app');
 
@@ -22,25 +23,22 @@ function renderApp() {
     const isMobile = window.innerWidth <= 768;
 
     if (isMobile) {
-        // ==========================================
-        // VISTA MÒBIL (Lògica de navegació)
-        // ==========================================
-        
-        // Funció que munta el trencaclosques segons la pàgina que demanem
-        const renderMobilePage = (pageName: 'home' | 'networking') => {
+
+        const renderMobilePage = (pageName: 'home' | 'networking' | 'jobs') => {
             let currentTitle = '';
             let currentContent = '';
 
-            // Decidim què posar al mig segons la pàgina
             if (pageName === 'home') {
                 currentTitle = 'Home';
                 currentContent = createMobileHomeLayout();
             } else if (pageName === 'networking') {
                 currentTitle = 'Networking';
                 currentContent = createMobileNetworkingLayout();
+            } else if (pageName === 'jobs') {
+                currentTitle = 'Job Portal';
+                currentContent = createMobileJobsLayout();
             }
 
-            // Dibuixem l'App sota comanda
             app.innerHTML = `
                 ${createMobileHeader(currentTitle)}
                 ${createMobileSearchBar()}
@@ -48,7 +46,6 @@ function renderApp() {
                 ${createMobileNavbar(pageName)}
             `;
 
-            // Un cop dibuixat, reactivem els clics dels botons
             setupMobileListeners();
         };
 
@@ -56,22 +53,23 @@ function renderApp() {
         const setupMobileListeners = () => {
             document.getElementById('nav-go-home')?.addEventListener('click', (e) => {
                 e.preventDefault();
-                renderMobilePage('home'); // Demanem carregar la Home
+                renderMobilePage('home');
             });
 
             document.getElementById('nav-go-networking')?.addEventListener('click', (e) => {
                 e.preventDefault();
-                renderMobilePage('networking'); // Demanem carregar Networking
+                renderMobilePage('networking');
             });
-        };
-
-        // Arrenquem l'app carregant la Home per defecte
+        ;
+            document.getElementById('nav-go-jobs')?.addEventListener('click', (e) => {
+                e.preventDefault();
+                renderMobilePage('jobs');
+            });
+        }
+        
         renderMobilePage('home');
 
     } else {
-        // ==========================================
-        // VISTA ESCRIPTORI (PC)
-        // ==========================================
         app.innerHTML = `
             ${createNavbar()}
             <div id="home-container"></div>
@@ -84,8 +82,6 @@ function renderApp() {
         }
     }
 }
-
-// Inicialitzem l'aplicació
 if (app) {
     renderApp();
     window.addEventListener('resize', renderApp);
