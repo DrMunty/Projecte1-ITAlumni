@@ -213,3 +213,82 @@
 .nav-item.active span {
     color: #DF007F; /* Rosa per a l'actiu */
 }
+
+/* ==========================================================================
+   NETWORKING PAGE - MOBILE CONTENT
+   ========================================================================== */
+
+/* Contenidor exclusiu d'aquesta pàgina per a scroll vertical */
+.networking-content {
+    flex: 1;
+    overflow-y: auto; /* Permet fer scroll cap avall */
+    overflow-x: hidden;
+    padding: 10px 24px 100px 24px; /* Padding inferior de 100px per no quedar tapat per la Bottom Nav */
+    display: flex;
+    flex-direction: column;
+}
+
+.alumni-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Espai entre targeta i targeta */
+}
+
+/* Disseny de la targeta individual */
+.alumni-list-card {
+    background: #FFFFFF;
+    border: 1px solid #F3F4F6;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02); /* Ombra ultra suau */
+}
+
+.alumni-info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.alumni-info-text h3 {
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #171A1F;
+}
+
+.alumni-class {
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 12px;
+    color: #9095A0; /* Gris fluix per a l'any de promoció */
+}
+
+.alumni-role {
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 13px;
+    color: #565E6C; /* Gris fosc per al càrrec */
+}
+
+/* El requadre gris per a les fotos */
+.alumni-photo-placeholder {
+    width: 70px;
+    height: 70px;
+    background-color: #E5E7EB;
+    border-radius: 8px;
+    flex-shrink: 0; /* Evita que el requadre s'aixafi si el text és molt llarg */
+}
+
+/* 1. Fem que TOTES les icones de la barra inferior siguin GRISES per defecte */
+.nav-item .nav-icon {
+    /* Filtre exacte per convertir una imatge a color gris (#9095A0) */
+    filter: invert(65%) sepia(8%) saturate(350%) hue-rotate(182deg) brightness(89%) contrast(90%);
+    transition: filter 0.3s ease; /* Transició suau en canviar de color */
+}
+
+/* 2. Fem que NOMÉS la icona de la pestanya ACTIVA es torni ROSA */
+.nav-item.active .nav-icon {
+    /* Filtre exacte per convertir una imatge al teu rosa corporatiu (#DF007F) */
+    filter: invert(24%) sepia(87%) saturate(5479%) hue-rotate(318deg) brightness(97%) contrast(106%);
+}
