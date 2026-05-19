@@ -1,8 +1,8 @@
-export function createMobileHeader(): string {
+export function createMobileHeader(title: string): string {
     return `
     <div class="mobile-app-container">
         <header class="mobile-header">
-            <h1 class="mobile-title">Home</h1>
+            <h1 class="mobile-title">${title}</h1>
             <div class="header-icons">
                 <button class="icon-btn-box">
                     <img src="icons/align-bottom.png" alt="Notifications" class="m-icon">

@@ -1,25 +1,37 @@
 import '../styles/navbar.css';
 import '../styles/home.css';
 import '../styles/footer.css';
-import '../styles/mobileHome.css';
+import '../styles/mobile.css';
 import { createNavbar } from './components/navbar';
 import { createHomePage } from './components/Home';
 import { createFooter} from './components/footer';
+import { createMobileHeader } from './components/mobileHeader';
+import { createMobileSearchBar } from './components/mobileSearchBar';
+import { createMobileNavbar } from './components/mobileNavbar';
 import { createMobileHomeLayout } from './components/mobileHome';
 
 const app = document.querySelector<HTMLDivElement>('#app');
 
-function renderApp(){
-if (!app) return;
+function renderApp() {
+    if (!app) return;
+
     const isMobile = window.innerWidth <= 768;
 
-    if (isMobile){
-        app.innerHTML = createMobileHomeLayout();
-    } else {
+    if (isMobile) {
+
         app.innerHTML = `
-        ${createNavbar()}
-        <div id= "home-container"></div>
-        ${createFooter()}
+            ${createMobileHeader('Home')}
+            ${createMobileSearchBar()}
+            ${createMobileHomeLayout()}
+            ${createMobileNavbar('home')}
+        `;
+
+    } else {
+
+        app.innerHTML = `
+            ${createNavbar()}
+            <div id="home-container"></div>
+            ${createFooter()}
         `;
 
         const homeContainer = document.getElementById('home-container');

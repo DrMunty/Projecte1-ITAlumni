@@ -23,7 +23,6 @@ export function createMobileHomeLayout(): string {
                     <button class="btn-mobile-action">Search Jobs</button>
                 </div>
             </div>
-
         </main>
         `
     }
