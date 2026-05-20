@@ -4,12 +4,14 @@ import '../styles/home.css';
 import '../styles/footer.css';
 import '../styles/mobile.css'; 
 import '../styles/networking.css';
+import '../styles/jobs.css';
 
 // 2. IMPORTS DE COMPONENTS D'ESCRIPTORI (PC)
 import { createNavbar } from './components/navbar';
 import { createHomePage } from './components/Home';
 import { createFooter } from './components/footer';
 import { createNetworkingPage } from './components/desktopNetworking'; // Nuevo componente de PC
+import { createDesktopJobsPage } from './components/desktopJobs';
 
 // 3. IMPORTS DE COMPONENTS REUTILITZABLES DE MÒBIL
 import { createMobileHeader } from './components/mobileHeader';
@@ -81,8 +83,7 @@ function renderApp() {
                 container.innerHTML = createNetworkingPage();
             } else if (currentRoute === 'jobs') {
                 // ESTRUCTURA PREPARADA: Cuando crees 'createDesktopJobsPage', descomenta la línea de abajo y borra el h1
-                // container.innerHTML = createDesktopJobsPage();
-                container.innerHTML = "<div style='max-width:1200px; margin:0 auto; padding:40px 20px;'><h1>Job Opportunities versión PC (En construcción)</h1></div>";
+                container.innerHTML = createDesktopJobsPage();
             }
         }
         
