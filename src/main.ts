@@ -5,9 +5,11 @@ import '../styles/footer.css';
 import '../styles/mobile.css'; 
 import '../styles/networking.css';
 import '../styles/jobs.css';
+import '../styles/secondNavbar.css'
 
 // 2. IMPORTS DE COMPONENTS D'ESCRIPTORI (PC)
 import { createNavbar } from './components/navbar';
+import { createSecondNavbar } from './components/secondNavbar';
 import { createHomePage } from './components/Home';
 import { createFooter } from './components/footer';
 import { createNetworkingPage } from './components/desktopNetworking'; // Nuevo componente de PC
@@ -66,12 +68,23 @@ function renderApp() {
         // VISTA ESCRIPTORI (PC)
         // ==========================================
         
-        // 1. Pintamos la estructura base fija de PC (Navbar + Contenedor + Footer)
-        app.innerHTML = `
-            ${createNavbar()}
-            <div id="desktop-container"></div>
-            ${createFooter()}
-        `;
+        // 1. Decidim quina navbar hem de pintar segons on estem
+    let activeNavbar = '';
+    
+    if (currentRoute === 'home') {
+        // A la Home pintem la primera navbar (la que ja tenies)
+        activeNavbar = createNavbar(); 
+    } else {
+        // A Networking o Jobs pintem la segona navbar intel·ligent
+        // Li passem currentRoute perquè sàpiga si ha de subratllar Networking o Jobs
+        activeNavbar = createSecondNavbar(currentRoute); 
+    };
+app.innerHTML = `
+        ${activeNavbar}
+        <div id="desktop-container"></div>
+        ${createFooter()}
+    `;
+
 
         // 2. Inyectamos el componente dinámico dentro del contenedor de PC según la ruta
         const container = document.getElementById('desktop-container');

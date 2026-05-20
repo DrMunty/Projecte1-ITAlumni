@@ -1,0 +1,129 @@
+/* ==========================================================================
+   SECOND NAVBAR (NETWORKING & JOBS)
+   ========================================================================== */
+
+.second-desktop-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    height: 70px;
+    background-color: #FFFFFF;
+    font-family: "Source Sans 3", sans-serif;
+    box-sizing: border-box;
+}
+
+/* --- PART ESQUERRA --- */
+.second-nav-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    /* Eliminem el flex: 1 perquè no empenyi el menú cap al centre de la pantalla */
+}
+
+.second-nav-logo {
+    height: 40px;
+}
+
+.second-nav-title {
+    font-size: 35px;
+    font-weight: 400;
+    color: #171A1F;
+}
+
+/* --- PART CENTRAL --- */
+.second-nav-center {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+    margin: 0 0 0 70px; /* Marge esquerre per separar-ho del logo */
+    margin-right: auto; /* Empeny la part dreta cap al final, deixant els links a l'esquerra */
+    padding: 0;
+    height: 100%; 
+}
+
+.second-nav-links li {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.second-nav-links a {
+    position: relative; /* Vital perquè l'animació ::after quedi sota el text */
+    text-decoration: none;
+    color: #000000; 
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.second-nav-links a:hover,
+.second-nav-links a.active {
+    color: #DF007F;
+}
+
+/* L'animació del subratllat (::after) */
+.second-nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: -2px; 
+    left: 50%;
+    transform: translateX(-50%); 
+    width: 0; 
+    height: 3px;
+    background: #DF007F;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+/* Quan passem el ratolí o estem a la pàgina activa, la línia creix */
+.second-nav-links a.active::after,
+.second-nav-links a:hover::after {
+    width: 100%; /* Ho he posat al 100% per defecte, si vols que quedi més curt torna-ho a canviar a 70% */
+}
+
+/* --- PART DRETA --- */
+.second-nav-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.second-icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+}
+
+.second-icon-btn:hover {
+    transform: scale(1.1);
+}
+
+.second-action-icon {
+    width: 20px;
+    height: 20px;
+    filter: invert(40%) sepia(5%) saturate(200%) hue-rotate(180deg);
+}
+
+.second-profile-pic {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.second-profile-pic:hover {
+    transform: scale(1.1);
+}
