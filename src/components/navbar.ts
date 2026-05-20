@@ -6,8 +6,9 @@ export function createNavbar(): string {
             
             <nav>
                 <ul class="nav_links">
-                    <li><a>Inici</a></li> <li><a>Xarxa</a></li>
-                    <li><a>Oportunitats de feina</a></li>
+                    <li><a id= "nav-pc.home"> Inici </a></li> 
+                    <li><a id= "nav-pc-networking"> Xarxa </a></li>
+                    <li><a id= "nav-pc-jobs"> Oportunitats de feina </a></li>
                 </ul>
             </nav>
         </div>

@@ -1,0 +1,138 @@
+/* Contenedor principal con márgenes laterales */
+.desktop-networking-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: "Source Sans 3", sans-serif;
+    color: #565E6C;
+}
+
+/* --- BARRA SUPERIOR (Buscador y Filtros) --- */
+.networking-top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.desktop-search-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: #FFFFFF;
+    border: 1px solid #DEE1E6;
+    border-radius: 6px;
+    padding: 8px 16px;
+    width: 300px;
+}
+
+.desktop-search-input {
+    border: none;
+    outline: none;
+    margin-left: 10px;
+    font-family: inherit;
+    width: 100%;
+}
+
+.desktop-filters {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-size: 14px;
+}
+
+.filter-label {
+    font-weight: 700;
+    color: #171A1F;
+}
+
+.filter-option {
+    cursor: pointer;
+    color: #9095A0;
+    padding-bottom: 4px;
+}
+
+.filter-option.active {
+    color: #DF007F;
+    font-weight: 600;
+    border-bottom: 2px solid #DF007F; /* La línea rosa debajo de Popular */
+}
+
+/* --- CUADRÍCULA DE PERFILES (4 columnas) --- */
+.desktop-profiles-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 50px;
+}
+
+/* Estilo de la tarjeta general (sirve para arriba y abajo) */
+.desktop-profile-card,
+.desktop-suggestion-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.desktop-profile-card h3,
+.desktop-suggestion-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #171A1F;
+    margin: 0;
+}
+
+.card-role, .card-location {
+    font-size: 13px;
+    margin: 0;
+}
+
+.btn-message, .btn-connect {
+    margin-top: 10px;
+    padding: 8px 24px;
+    border-radius: 6px;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    border: none;
+    color: #FFFFFF;
+    background-color: #DF007F; /* Rosa corporativo */
+    transition: filter 0.2s;
+}
+
+.btn-message:hover, .btn-connect:hover {
+    filter: brightness(1.1);
+}
+
+/* --- COLUMNA INFERIOR --- */
+.networking-content-column {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 400px; /* Limitamos el ancho para que coincida con tu diseño a la izquierda */
+}
+
+.networking-content-column h2 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #171A1F;
+    margin-bottom: 20px;
+}
+
+.activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.activity-item {
+    font-size: 13px;
+    margin: 0;
+}
+
+.suggestions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
