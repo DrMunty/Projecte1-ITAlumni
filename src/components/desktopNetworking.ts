@@ -41,7 +41,7 @@ export function createNetworkingPage(): string {
         
         <div class="networking-top-bar">
             <div class="desktop-search-wrapper">
-                <span class="search-icon">🔍</span>
+                <span class="search-icon"> <img src= "icons/search.png"></span>
                 <input type="text" placeholder="Search alumni..." class="desktop-search-input">
             </div>
             
