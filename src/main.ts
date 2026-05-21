@@ -12,15 +12,14 @@ import { createNavbar } from './components/navbar';
 import { createSecondNavbar } from './components/secondNavbar';
 import { createHomePage } from './components/Home';
 import { createFooter } from './components/footer';
-import { createNetworkingPage } from './components/desktopNetworking'; // Nuevo componente de PC
+import { createNetworkingPage } from './components/desktopNetworking';
+import { NetworkingPageLogic } from './components/desktopNetworking';
 import { createDesktopJobsPage } from './components/desktopJobs';
 
 // 3. IMPORTS DE COMPONENTS REUTILITZABLES DE MÒBIL
 import { createMobileHeader } from './components/mobileHeader';
 import { createMobileSearchBar } from './components/mobileSearchBar';
 import { createMobileNavbar } from './components/mobileNavbar';
-
-// 4. IMPORTS DEL CONTINGUT MÒBIL
 import { createMobileHomeLayout } from './components/mobileHome'; 
 import { createMobileNetworkingLayout} from './components/mobileNetworking'; 
 import { createMobileJobsLayout } from './components/mobileJobs'; 
@@ -31,7 +30,7 @@ const app = document.querySelector<HTMLDivElement>('#app');
 // "MEMORIA" O ESTADO DE LA RUTA ACTUAL
 let currentRoute: 'home' | 'networking' | 'jobs' = 'home';
 
-function renderApp() {
+function renderApp(): void {
     if (!app) return;
 
     const isMobile = window.innerWidth <= 768;
@@ -87,29 +86,32 @@ app.innerHTML = `
 
 
         // 2. Inyectamos el componente dinámico dentro del contenedor de PC según la ruta
-        const container = document.getElementById('desktop-container');
+        const container = document.getElementById('desktop-container') as HTMLDivElement | null;
         if (container) {
             if (currentRoute === 'home') {
                 container.appendChild(createHomePage());
             } else if (currentRoute === 'networking') {
-                // Enlazamos tu nueva página de Networking para PC
+                // A) Pintem l'esquelet estàtic (el cercador buit i els botons de filtre)
                 container.innerHTML = createNetworkingPage();
+                
+                // B) CRÍTIC: Engeguem la lògica reactiva de TypeScript per activar les cerques i clics
+                NetworkingPageLogic();
+                
             } else if (currentRoute === 'jobs') {
-                // ESTRUCTURA PREPARADA: Cuando crees 'createDesktopJobsPage', descomenta la línea de abajo y borra el h1
                 container.innerHTML = createDesktopJobsPage();
             }
         }
         
-        // 3. Activamos los clics de la Navbar superior de PC
+        // PAS 4: Activem els escoltadors de clics de la Navbar de PC
         setupDesktopListeners(); 
     }
 }
 
 // ==========================================
-// ESCUCHADORES DE CLICS (LISTENERS)
+// 5. ESCOUTADORS DE CLICS (LISTENERS)
 // ==========================================
 
-const setupMobileListeners = () => {
+const setupMobileListeners = (): void => {
     document.getElementById('nav-go-home')?.addEventListener('click', (e) => {
         e.preventDefault();
         currentRoute = 'home';
@@ -129,25 +131,20 @@ const setupMobileListeners = () => {
     });
 };
 
-const setupDesktopListeners = () => {
-    // IMPORTANTE: Revisa los selectores de tu archivo navbar.ts de PC. 
-    // Debes asegurarte de que los enlaces tengan asignados estos IDs (o clases) para que JS los encuentre:
-    
-    // Clic en "Inici"
+const setupDesktopListeners = (): void => {
+    // Escolta els clics independentment de quina Navbar estigui pintada a la pantalla
     document.getElementById('nav-pc-home')?.addEventListener('click', (e) => {
         e.preventDefault();
         currentRoute = 'home';
         renderApp();
     });
 
-    // Clic en "Xarxa" (Networking)
     document.getElementById('nav-pc-networking')?.addEventListener('click', (e) => {
         e.preventDefault();
         currentRoute = 'networking';
         renderApp();
     });
 
-    // Clic en "Oportunitats de feina" (Jobs)
     document.getElementById('nav-pc-jobs')?.addEventListener('click', (e) => {
         e.preventDefault();
         currentRoute = 'jobs';
@@ -155,7 +152,9 @@ const setupDesktopListeners = () => {
     });
 };
 
-// INICIALIZACIÓN DE LA APP
+// ==========================================
+// 6. INICIALITZACIÓ DE L'APLICACIÓ
+// ==========================================
 if (app) {
     renderApp();
     window.addEventListener('resize', renderApp);
