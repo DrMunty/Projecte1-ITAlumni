@@ -11,7 +11,7 @@ import { sortUsersByName, sortUsersByOption } from './filterFunction';
 const alumniData: User[] = alumniDataRaw as User[];
 
 // 2. EL ESQUELETO HTML (Estàtic)
-export function createDesktopNetworkingPage(): string {
+export function createNetworkingPage(): string {
     return `
     <div class="desktop-networking-container">
         
@@ -36,7 +36,7 @@ export function createDesktopNetworkingPage(): string {
 }
 
 // 3. LA LÒGICA DINÀMICA DE LA PÀGINA
-export function initNetworkingLogic(): void {
+export function NetworkingPageLogic(): void {
     // Seleccionem els elements del DOM de forma segura amb tipatge estricte
     const searchInput = document.getElementById('networking-search-input') as HTMLInputElement | null;
     const gridContainer = document.getElementById('dynamic-profiles-grid') as HTMLDivElement | null;

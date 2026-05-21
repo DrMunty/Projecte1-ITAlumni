@@ -3,7 +3,7 @@ export function createMobileSearchBar(): string {
     <div class="mobile-search-section">
             <div class="search-bar-wrapper">
                 <span class="search-icon">🔍</span>
-                <input type="text" placeholder="Search alumni..." class="search-input">
+                <input type="text" id= "mobile-search-input" placeholder="Search alumni..." class="search-input">
             </div>
         </div>
             `
