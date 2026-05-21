@@ -21,7 +21,8 @@ import { createMobileHeader } from './components/mobileHeader';
 import { createMobileSearchBar } from './components/mobileSearchBar';
 import { createMobileNavbar } from './components/mobileNavbar';
 import { createMobileHomeLayout } from './components/mobileHome'; 
-import { createMobileNetworkingLayout} from './components/mobileNetworking'; 
+import { createMobileNetworkingLayout} from './components/mobileNetworking';
+import { MobileNetworkingLogic} from './components/mobileNetworking';
 import { createMobileJobsLayout } from './components/mobileJobs'; 
 
 // Seleccionamos el div principal de la aplicación
@@ -61,6 +62,10 @@ function renderApp(): void {
         `;
 
         setupMobileListeners();
+
+        if (currentRoute === 'networking'){
+            MobileNetworkingLogic();
+        }
 
     } else {
         // ==========================================
