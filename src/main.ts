@@ -1,37 +1,40 @@
-// 1. IMPORTS D'ESTILS
+
 import '../styles/navbar.css';
+import '../styles/secondNavbar.css'; 
 import '../styles/home.css';
 import '../styles/footer.css';
 import '../styles/mobile.css'; 
-import '../styles/networking.css';
-import '../styles/jobs.css';
-import '../styles/secondNavbar.css'
+import '../styles/desktopNetworking.css'; 
+import '../styles/desktopJobs.css';
 
-// 2. IMPORTS DE COMPONENTS D'ESCRIPTORI (PC)
-import { createNavbar } from './components/navbar';
-import { createSecondNavbar } from './components/secondNavbar';
+import { createNavbar } from './components/navbar';             
+import { createSecondNavbar } from './components/secondNavbar'; 
 import { createHomePage } from './components/Home';
 import { createFooter } from './components/footer';
-import { createNetworkingPage } from './components/desktopNetworking'; // Nuevo componente de PC
-import { createDesktopJobsPage } from './components/desktopJobs';
 
-// 3. IMPORTS DE COMPONENTS REUTILITZABLES DE MÒBIL
+// Importem HTML i Lògica de Networking
+import { createNetworkingPage, networkingLogic } from './components/desktopNetworking';
+
+// Importem HTML i Lògica de Jobs (¡NUEVO!)
+import { createDesktopJobsPage, initJobsLogic } from './components/desktopJobs';
+
+// ==========================================
+// 3. IMPORTS DE COMPONENTS DE MÒBIL
+// ==========================================
 import { createMobileHeader } from './components/mobileHeader';
-import { createMobileSearchBar } from './components/mobileSearchBar';
-import { createMobileNavbar } from './components/mobileNavbar';
+import { createMobileSearch } from './components/mobileSearch';
+import { createMobileBottomNav } from './components/mobileBottomNav';
+import { createMobileHomeContent } from './components/mobileHome'; 
+import { createMobileNetworkingContent, initMobileNetworkingLogic } from './components/mobileNetworking'; 
+import { createMobileJobsContent } from './components/mobileJobs'; 
 
-// 4. IMPORTS DEL CONTINGUT MÒBIL
-import { createMobileHomeLayout } from './components/mobileHome'; 
-import { createMobileNetworkingLayout} from './components/mobileNetworking'; 
-import { createMobileJobsLayout } from './components/mobileJobs'; 
-
-// Seleccionamos el div principal de la aplicación
+// ==========================================
+// 4. ESTAT GLOBAL DE LA NAVEGACIÓ
+// ==========================================
 const app = document.querySelector<HTMLDivElement>('#app');
-
-// "MEMORIA" O ESTADO DE LA RUTA ACTUAL
 let currentRoute: 'home' | 'networking' | 'jobs' = 'home';
 
-function renderApp() {
+function renderApp(): void {
     if (!app) return;
 
     const isMobile = window.innerWidth <= 768;
@@ -45,71 +48,72 @@ function renderApp() {
 
         if (currentRoute === 'home') {
             currentTitle = 'Home';
-            currentContent = createMobileHomeLayout();
+            currentContent = createMobileHomeContent();
         } else if (currentRoute === 'networking') {
             currentTitle = 'Networking';
-            currentContent = createMobileNetworkingLayout();
+            currentContent = createMobileNetworkingContent();
         } else if (currentRoute === 'jobs') {
             currentTitle = 'Job Portal';
-            currentContent = createMobileJobsLayout();
+            currentContent = createMobileJobsContent();
         }
 
         app.innerHTML = `
             ${createMobileHeader(currentTitle)}
-            ${createMobileSearchBar()}
+            ${createMobileSearch()}
             ${currentContent}
-            ${createMobileNavbar(currentRoute)}
+            ${createMobileBottomNav(currentRoute)}
         `;
 
         setupMobileListeners();
+
+        // Inicializamos la lógica móvil si estamos en networking
+        if (currentRoute === 'networking') {
+            initMobileNetworkingLogic();
+        }
 
     } else {
         // ==========================================
         // VISTA ESCRIPTORI (PC)
         // ==========================================
         
-        // 1. Decidim quina navbar hem de pintar segons on estem
-    let activeNavbar = '';
-    
-    if (currentRoute === 'home') {
-        // A la Home pintem la primera navbar (la que ja tenies)
-        activeNavbar = createNavbar(); 
-    } else {
-        // A Networking o Jobs pintem la segona navbar intel·ligent
-        // Li passem currentRoute perquè sàpiga si ha de subratllar Networking o Jobs
-        activeNavbar = createSecondNavbar(currentRoute); 
-    };
-app.innerHTML = `
-        ${activeNavbar}
-        <div id="desktop-container"></div>
-        ${createFooter()}
-    `;
+        let activeNavbar = '';
+        if (currentRoute === 'home') {
+            activeNavbar = createNavbar(); 
+        } else {
+            activeNavbar = createSecondNavbar(currentRoute); 
+        }
 
+        app.innerHTML = `
+            ${activeNavbar}
+            <div id="desktop-container"></div>
+            ${createFooter()}
+        `;
 
-        // 2. Inyectamos el componente dinámico dentro del contenedor de PC según la ruta
-        const container = document.getElementById('desktop-container');
+        const container = document.getElementById('desktop-container') as HTMLDivElement | null;
         if (container) {
             if (currentRoute === 'home') {
                 container.appendChild(createHomePage());
             } else if (currentRoute === 'networking') {
-                // Enlazamos tu nueva página de Networking para PC
-                container.innerHTML = createNetworkingPage();
+                // Networking HTML + Lógica
+                container.innerHTML = createDesktopNetworkingPage();
+                initNetworkingLogic();
+                
             } else if (currentRoute === 'jobs') {
-                // ESTRUCTURA PREPARADA: Cuando crees 'createDesktopJobsPage', descomenta la línea de abajo y borra el h1
+                // Jobs HTML + Lógica (¡AQUÍ SUCEDE LA MAGIA!)
                 container.innerHTML = createDesktopJobsPage();
+                initJobsLogic(); 
             }
         }
         
-        // 3. Activamos los clics de la Navbar superior de PC
         setupDesktopListeners(); 
     }
 }
 
 // ==========================================
-// ESCUCHADORES DE CLICS (LISTENERS)
+// 5. ESCOUTADORS DE CLICS (LISTENERS)
 // ==========================================
 
-const setupMobileListeners = () => {
+const setupMobileListeners = (): void => {
     document.getElementById('nav-go-home')?.addEventListener('click', (e) => {
         e.preventDefault();
         currentRoute = 'home';
@@ -129,25 +133,19 @@ const setupMobileListeners = () => {
     });
 };
 
-const setupDesktopListeners = () => {
-    // IMPORTANTE: Revisa los selectores de tu archivo navbar.ts de PC. 
-    // Debes asegurarte de que los enlaces tengan asignados estos IDs (o clases) para que JS los encuentre:
-    
-    // Clic en "Inici"
+const setupDesktopListeners = (): void => {
     document.getElementById('nav-pc-home')?.addEventListener('click', (e) => {
         e.preventDefault();
         currentRoute = 'home';
         renderApp();
     });
 
-    // Clic en "Xarxa" (Networking)
     document.getElementById('nav-pc-networking')?.addEventListener('click', (e) => {
         e.preventDefault();
         currentRoute = 'networking';
         renderApp();
     });
 
-    // Clic en "Oportunitats de feina" (Jobs)
     document.getElementById('nav-pc-jobs')?.addEventListener('click', (e) => {
         e.preventDefault();
         currentRoute = 'jobs';
@@ -155,7 +153,9 @@ const setupDesktopListeners = () => {
     });
 };
 
-// INICIALIZACIÓN DE LA APP
+// ==========================================
+// 6. INICIALITZACIÓ DE L'APLICACIÓ
+// ==========================================
 if (app) {
     renderApp();
     window.addEventListener('resize', renderApp);
