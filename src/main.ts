@@ -6,8 +6,8 @@ import '../styles/secondNavbar.css';
 import '../styles/home.css';
 import '../styles/footer.css';
 import '../styles/mobile.css'; 
-import '../styles/desktopNetworking.css'; 
-import '../styles/desktopJobs.css';
+import '../styles/networking.css'; 
+import '../styles/jobs.css';
 
 // ==========================================
 // 2. IMPORTS DE COMPONENTS D'ESCRIPTORI (PC)
