@@ -51,23 +51,28 @@ function renderApp(): void {
         // ==========================================
         let currentTitle = '';
         let currentContent = '';
+        let searchPlaceholder = 'Search pages';
 
         // Triem el contingut mòbil segons la ruta activa
         if (currentRoute === 'home') {
             currentTitle = 'Home';
             currentContent = createMobileHomeLayout();
+            searchPlaceholder = 'Search pages'
         } else if (currentRoute === 'networking') {
             currentTitle = 'Networking';
             currentContent = createMobileNetworkingLayout();
+            searchPlaceholder = 'Search alumni'
         } else if (currentRoute === 'jobs') {
             currentTitle = 'Job Portal';
             currentContent = createMobileJobLayout();
+            searchPlaceholder = 'Search job opportunities'
+
         }
 
         // Injectem l'estructura de mòbil
         app.innerHTML = `
             ${createMobileHeader(currentTitle)}
-            ${createMobileSearchBar()}
+            ${createMobileSearchBar(searchPlaceholder)}
             ${currentContent}
             ${createMobileNavbar(currentRoute)}
         `;
