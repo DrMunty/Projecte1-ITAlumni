@@ -381,14 +381,14 @@
 }
 
 .btn-mobile-apply {
-    background-color: #d71cbb;
-    color: #FFFFFF;
+    background-color: #DF007F;
     border: none;
     padding: 10px 20px;
     border-radius: 6px;
     font-size: 12px;
     font-weight: 600;
     cursor: pointer;
+    color: #FFFFFF
 
 }
 
