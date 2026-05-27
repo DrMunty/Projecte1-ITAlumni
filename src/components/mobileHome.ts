@@ -4,7 +4,7 @@ export function createMobileHomeLayout(): string {
             
             <div class="mobile-card">
                 <div class="card-image-placeholder">
-                <img src = "img/Networking.jpg" alt = "People talking to each other" class = "card-image">
+                <img src ="img/Networking.jpg" alt = "People talking to each other" class = "card-image">
                 </div>
                 <div class="card-info">
                     <h2>Networking</h2>

@@ -33,10 +33,11 @@ import { createMobileHomeLayout } from './components/mobileHome';
 import { createMobileNetworkingLayout, MobileNetworkingLogic } from './components/mobileNetworking';
 import { createMobileJobLayout } from './components/mobileJobs'; 
 import { mobileJobLogic } from './components/mobileJobs';
+import { createMobileProfilePage } from './components/mobileProfile';
 
 // ==========================================
 const app = document.querySelector<HTMLDivElement>('#app');
-let currentRoute: 'home' | 'networking' | 'jobs' = 'home';
+let currentRoute: 'home' | 'networking' | 'jobs' | 'profile' = 'home';
 
 
 function renderApp(): void {
@@ -66,7 +67,9 @@ function renderApp(): void {
             currentTitle = 'Job Portal';
             currentContent = createMobileJobLayout();
             searchPlaceholder = 'Search job opportunities'
-
+        } else if (currentRoute === 'profile') {
+            currentTitle = 'Profile';
+            currentContent = createMobileProfilePage();
         }
 
         // Injectem l'estructura de mòbil
@@ -151,6 +154,12 @@ const setupMobileListeners = (): void => {
     document.getElementById('nav-go-jobs')?.addEventListener('click', (e) => {
         e.preventDefault();
         currentRoute = 'jobs';
+        renderApp();
+    });
+
+    document.getElementById('nav-go-profile')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        currentRoute = 'profile';
         renderApp();
     });
 };
