@@ -29,22 +29,16 @@ import { createDesktopJobsPage, jobsLogic } from './components/desktopJobs';
 import { createMobileHeader } from './components/mobileHeader';
 import { createMobileSearchBar } from './components/mobileSearchBar';
 import { createMobileNavbar } from './components/mobileNavbar';
-import { createMobileHomeLayout } from './components/mobileHome'; 
-import { createMobileJobsLayout } from './components/mobileJobs'; 
+import { createMobileHomeLayout } from './components/mobileHome';
+import { createMobileNetworkingLayout, MobileNetworkingLogic } from './components/mobileNetworking';
+import { createMobileJobLayout } from './components/mobileJobs'; 
+import { mobileJobLogic } from './components/mobileJobs';
 
-// Importem HTML i Lògica de la secció de Networking (Mòbil)
-import { createMobileNetworkingLayout, MobileNetworkingLogic } from './components/mobileNetworking'; 
-
-// ==========================================
-// 4. ESTAT GLOBAL DE LA NAVEGACIÓ (ROUTING)
 // ==========================================
 const app = document.querySelector<HTMLDivElement>('#app');
 let currentRoute: 'home' | 'networking' | 'jobs' = 'home';
 
-/**
- * Funció principal que renderitza tota l'aplicació depenent 
- * de la mida de pantalla i de la ruta activa.
- */
+
 function renderApp(): void {
     if (!app) return;
 
@@ -67,7 +61,7 @@ function renderApp(): void {
             currentContent = createMobileNetworkingLayout();
         } else if (currentRoute === 'jobs') {
             currentTitle = 'Job Portal';
-            currentContent = createMobileJobsLayout();
+            currentContent = createMobileJobLayout();
         }
 
         // Injectem l'estructura de mòbil
@@ -86,7 +80,11 @@ function renderApp(): void {
             MobileNetworkingLogic();
         }
 
-    } else {
+        if (currentRoute === 'jobs') {
+            mobileJobLogic();
+        }
+
+        } else {
         // ==========================================
         // VISTA ESCRIPTORI (PC)
         // ==========================================
