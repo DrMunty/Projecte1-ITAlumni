@@ -30,7 +30,7 @@ import { createMobileHeader } from './components/mobileHeader';
 import { createMobileSearchBar } from './components/mobileSearchBar';
 import { createMobileNavbar } from './components/mobileNavbar';
 import { createMobileHomeLayout } from './components/mobileHome';
-import { createMobileNetworkingLayout, MobileNetworkingLogic } from './components/mobileNetworking';
+import { createNetworkingMobilePage, NetworkingMobilePageLogic } from './components/mobileNetworking';
 import { createMobileJobLayout } from './components/mobileJobs'; 
 import { mobileJobLogic } from './components/mobileJobs';
 import { createMobileProfilePage } from './components/mobileProfile';
@@ -61,7 +61,7 @@ function renderApp(): void {
             searchPlaceholder = 'Search pages'
         } else if (currentRoute === 'networking') {
             currentTitle = 'Networking';
-            currentContent = createMobileNetworkingLayout();
+            currentContent = createNetworkingMobilePage();
             searchPlaceholder = 'Search alumni'
         } else if (currentRoute === 'jobs') {
             currentTitle = 'Job Portal';
@@ -85,7 +85,7 @@ function renderApp(): void {
 
         // Si som a networking mòbil, engeguem la seva lògica interactiva de cerca
         if (currentRoute === 'networking') {
-            MobileNetworkingLogic();
+            NetworkingMobilePageLogic();
         }
 
         if (currentRoute === 'jobs') {
