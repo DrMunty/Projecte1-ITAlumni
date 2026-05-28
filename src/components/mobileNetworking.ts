@@ -51,7 +51,7 @@ export function MobileNetworkingLogic(): void {
             return;
         }
 
-        const defaultAvatar = "../public/icons/avatar-default.svg"
+        const defaultAvatar = "/icons/avatar-default.svg"
 
         // Fixa't que ara llegeix user.role i user.friends de la teva interfície User
         alumniContainer.innerHTML = finalUsers.map((user: User) => {
