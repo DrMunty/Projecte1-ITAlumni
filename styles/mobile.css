@@ -471,18 +471,16 @@
 }
 
 /* 4. ¡AQUÍ ESTÁ EL TRUCO! Forzamos al contenedor a no recortar */
-.card-image-placeholder {
+.profile-image-placeholder {
     width: 100%;
     max-width: 280px;        /* Controlamos el tamaño del gato en horizontal */
-    height: auto !important; /* ¡IMPORTANT! Rompe cualquier altura fija de 110px heredada */
-    background: none !important; /* Quita el fondo gris/blanco si tuviera */
-    overflow: visible !important; /* Asegura que no se aplique un overflow: hidden */
+    height: auto;
     display: flex;
     justify-content: center;
 }
 
 /* 5. La imagen fluida */
-.card-image {
+.profile-cat-image {
     width: 100%;
     height: auto;
     display: block;

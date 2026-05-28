@@ -5,8 +5,8 @@ export function createMobileProfilePage(): string {
           <div class = "mobile-profile-title-text">
             <h1> This page is under construction, sorry!</h1>
              </div>
-                <div class="card-image-placeholder">
-                <img src ="img/cat-builder1.png" alt = "A cat with working gear" class = "card-image">
+                <div class="profile-image-placeholder">
+                <img src ="img/cat-builder1.png" alt = "A cat with working gear" class = "profile-cat-image">
                 </div>
         </div>
     `
