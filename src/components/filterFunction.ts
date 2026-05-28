@@ -10,6 +10,7 @@ export interface User {
   friends: number;
   hoursConnected: number;
   recentActivity: RecentActivity;
+  avatar?: string
 }
 
 export type SortOption = 'recent' | 'popular' | 'connected'

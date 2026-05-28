@@ -218,79 +218,115 @@
    NETWORKING PAGE - MOBILE CONTENT
    ========================================================================== */
 
-/* Contenidor exclusiu d'aquesta pàgina per a scroll vertical */
-.networking-content {
-    flex: 1;
-    overflow-y: auto; /* Permet fer scroll cap avall */
-    overflow-x: hidden;
-    padding: 10px 24px 100px 24px; /* Padding inferior de 100px per no quedar tapat per la Bottom Nav */
-    display: flex;
-    flex-direction: column;
+    /* Contenidor de la secció */
+.networking-content-mobile {
+    padding: 16px;
+    padding-bottom: 120px;
+    min-height: 100vh;
+    overflow-y: auto;
 }
 
-.alumni-list-container {
+/* Contenidor de la barra de filtres (activa el desplaçament horitzontal si la pantalla és minúscula) */
+.mobile-tabs-scroll-container {
     display: flex;
-    flex-direction: column;
-    gap: 12px; /* Espai entre targeta i targeta */
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-bottom: 20px;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
 }
 
-/* Disseny de la targeta individual */
-.alumni-list-card {
-    background: #FFFFFF;
-    border: 1px solid #F3F4F6;
+/* Ocultem la barra de scroll visualment perquè quedi més net */
+.mobile-tabs-scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* El text fix de "Filters:" */
+.mobile-filters-label {
+    font-weight: 700;
+    color: #171A1F;
+    font-size: 14px;
+}
+
+/* El bloc de botons agrupats */
+.mobile-networking-tabs {
+    display: flex;
+    gap: 16px;
+}
+
+/* Estil base dels botons estil pestanya */
+.mobile-tab-btn {
+    background: none;
+    border: none;
+    padding: 6px 0 8px 0; /* Coixí a baix preparant el terreny per a la línia */
+    font-size: 14px;
+    font-weight: 600;
+    color: #9095A0; /* Gris clar per a les pestanyes inactives */
+    cursor: pointer;
+    border-bottom: 3px solid transparent; /* Línia transparent invisible d'inici per evitar salts visuals */
+    font-family: inherit;
+    transition: all 0.2s ease;
+}
+
+/* L'ESTIL DE LA PESTANYA ACTIVA (IGUAL QUE LA TEVA FOTO) */
+.mobile-tab-btn.active-tab {
+    color: #DF007F; /* Color rosa/magenta corporatiu */
+    border-bottom: 3px solid #DF007F; /* La línia inferior rosa */
+}
+
+/* --- ESTILS DE LES TARGETES D'ALUMNES MÒBIL --- */
+.mobile-alumni-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.mobile-alumni-card {
+    background-color: #FFFFFF;
+    border: 1px solid #DEE1E6;
     border-radius: 12px;
     padding: 16px;
     display: flex;
-    justify-content: space-between;
+    gap: 12px;
     align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02); /* Ombra ultra suau */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
 }
 
-.alumni-info-text {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.alumni-info-text h3 {
-    font-family: "Source Sans 3", sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    color: #171A1F;
-}
-
-.alumni-class {
-    font-family: "Source Sans 3", sans-serif;
-    font-size: 12px;
-    color: #9095A0; /* Gris fluix per a l'any de promoció */
-}
-
-.alumni-role {
-    font-family: "Source Sans 3", sans-serif;
-    font-size: 13px;
-    color: #565E6C; /* Gris fosc per al càrrec */
-}
-
-/* El requadre gris per a les fotos */
-.alumni-photo-placeholder {
-    width: 70px;
-    height: 70px;
+.mobile-alumni-avatar {
+    width: 48px;
+    height: 48px;
     background-color: #E5E7EB;
-    border-radius: 8px;
-    flex-shrink: 0; /* Evita que el requadre s'aixafi si el text és molt llarg */
+    border-radius: 50%;
+    object-fit: contain;
+    flex-shrink: 0;
 }
 
-/* 1. Fem que TOTES les icones de la barra inferior siguin GRISES per defecte */
-.nav-item .nav-icon {
-    /* Filtre exacte per convertir una imatge a color gris (#9095A0) */
-    filter: invert(65%) sepia(8%) saturate(350%) hue-rotate(182deg) brightness(89%) contrast(90%);
-    transition: filter 0.3s ease; /* Transició suau en canviar de color */
+.mobile-alumni-info h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #171A1F;
+    font-weight: 600;
 }
 
-/* 2. Fem que NOMÉS la icona de la pestanya ACTIVA es torni ROSA */
-.nav-item.active .nav-icon {
-    /* Filtre exacte per convertir una imatge al teu rosa corporatiu (#DF007F) */
-    filter: invert(24%) sepia(87%) saturate(5479%) hue-rotate(318deg) brightness(97%) contrast(106%);
+.mobile-alumni-title {
+    margin: 2px 0 4px 0;
+    font-size: 13px;
+    color: #565E6C;
+}
+
+.mobile-alumni-connections {
+    font-size: 11px;
+    color: #9095A0;
+}
+
+.no-results-text {
+    text-align: center;
+    color: #9095A0;
+    padding: 30px;
+    font-style: italic;
 }
 
 /* ==========================================================================
