@@ -1,21 +1,4 @@
-export interface Job {
-    name: string;
-    contract: string;         
-    remote: boolean;          
-    posted: number;
-    location: string;
-    stack: string;           
-    experienceLevel: boolean; 
-}
-
-
-export interface JobFilters {
-    searchTerm: string;
-    stack: string;      
-    contract: string;   
-    remote: string;     
-}
-
+import type {Job, JobFilters} from '../classes/Job';
 
 export function filterJobs(jobs: Job[], currentFilters: JobFilters): Job[] {
     return jobs.filter(job => {
