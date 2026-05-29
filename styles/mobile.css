@@ -210,6 +210,10 @@
     color: #DF007F; /* Rosa per a l'actiu */
 }
 
+.nav-item.active .nav-icon {
+    filter: invert(17%) sepia(96%) saturate(4645%) hue-rotate(318deg) brightness(91%) contrast(106%);
+}
+
 /* ==========================================================================
    NETWORKING PAGE - MOBILE CONTENT
    ========================================================================== */
