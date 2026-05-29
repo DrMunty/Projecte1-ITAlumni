@@ -17,7 +17,7 @@ import '../styles/mobile/mobileProfile.css';
 // ==========================================
 import { createNavbar } from './components/desktop/navbar';             
 import { createSecondNavbar } from './components/desktop/secondNavbar'; 
-import { createHomePage } from './components/desktop/Home';
+import { createHomePage } from './pages/desktop/Home';
 import { createFooter } from './components/desktop/footer';
 
 // Importem HTML i Lògica de la secció de Networking (PC)
