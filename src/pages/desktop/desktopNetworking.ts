@@ -17,7 +17,7 @@ export function createNetworkingPage(): string {
         
         <div class="networking-top-bar">
             <div class="desktop-search-wrapper">
-                <span class="search-icon">🔍</span>
+                <img src="icons/search.png" alt="Search" class="search-icon">
                 <input type="text" id="networking-search-input" placeholder="Search alumni by name..." class="desktop-search-input">
             </div>
             
@@ -63,7 +63,7 @@ export function NetworkingPageLogic(): void {
         // Si la cerca no dóna cap resultat, mostrem un missatge d'avís
         if (finalUsers.length === 0) {
             gridContainer.innerHTML = `
-                <p style="grid-column: 1 / -1; text-align: center; color: #9095A0; padding: 40px; font-style: italic;">
+                <p class="no-results-message">
                     No alumni found matching "${currentSearchTerm}"
                 </p>
             `;
@@ -77,14 +77,14 @@ export function NetworkingPageLogic(): void {
                 <p class="card-role">${p.role}</p>
                 <p class="card-location">${p.location}</p>
                 
-                <div style="font-size: 12px; color: #DF007F; margin-top: 6px; line-height: 1.4;">
+                <div class="card-extra-info">
                     ${currentSort === 'recent' ? 
-                        `<i>"${p.recentActivity.activity}"</i><br><span style="color:#9095A0; font-size:10px;">${p.recentActivity.timeStamp}</span>` : ''}
-                    ${currentSort === 'popular' ? `👥 ${p.friends} friends` : ''}
-                    ${currentSort === 'connected' ? `⏱️ ${p.hoursConnected} hours online` : ''}
+                        `<i>"${p.recentActivity.activity}"</i><br><span class="activity-timestamp">${p.recentActivity.timeStamp}</span>` : ''}
+                    ${currentSort === 'popular' ? `${p.friends} friends` : ''}
+                    ${currentSort === 'connected' ? `${p.hoursConnected} hours online` : ''}
                 </div>
 
-                <button class="btn-message" style="margin-top: 12px;">Message</button>
+                <button class="btn-message">Message</button>
             </div>
         `).join('');
     };

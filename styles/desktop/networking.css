@@ -25,12 +25,11 @@
     width: 300px;
 }
 
-.search-icon img {
-    width: 20px;
-    height: 30px;
-    padding-top: 5px;
-    
-    
+.search-icon {
+    width: 18px;  /* Ajusta la mida perquè quedi bé al costat del text */
+    height: 18px;
+    object-fit: contain; /* Evita que la icona es deformi */
+    opacity: 0.6; /* Opcional: fa que la icona quedi una mica més clara (grisenca) perquè no cridi tant l'atenció com el text que escriu l'usuari */
 }
 
 .desktop-search-input {
@@ -105,12 +104,13 @@
     cursor: pointer;
     border: none;
     color: #FFFFFF;
-    background-color: #DF007F; /* Rosa corporativo */
+    background-color: #DF007F;
     transition: filter 0.2s;
 }
 
 .btn-message:hover, .btn-connect:hover {
-    filter: brightness(1.1);
+    filter: brightness(1.4);
+    transition: ease;
 }
 
 /* --- COLUMNA INFERIOR --- */
@@ -143,4 +143,25 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+}
+
+/* --- ESTILOS EXTRAÍDOS DEL HTML --- */
+.no-results-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #9095A0;
+    padding: 40px;
+    font-style: italic;
+}
+
+.card-extra-info {
+    font-size: 12px;
+    color: #DF007F;
+    margin-top: 6px;
+    line-height: 1.4;
+}
+
+.activity-timestamp {
+    color: #9095A0;
+    font-size: 10px;
 }
