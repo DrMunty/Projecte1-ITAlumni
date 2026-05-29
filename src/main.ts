@@ -18,10 +18,10 @@ import { createHomePage } from './components/desktop/Home';
 import { createFooter } from './components/desktop/footer';
 
 // Importem HTML i Lògica de la secció de Networking (PC)
-import { createNetworkingPage, NetworkingPageLogic } from './components/desktop/desktopNetworking';
+import { createNetworkingPage, NetworkingPageLogic } from './pages/desktop/desktopNetworking';
 
 // Importem HTML i Lògica de la secció de Jobs (PC)
-import { createDesktopJobsPage, jobsLogic } from './components/desktop/desktopJobs';
+import { createDesktopJobsPage, jobsLogic } from './pages/desktop/desktopJobs';
 
 // ==========================================
 // 3. IMPORTS DE COMPONENTS DE MÒBIL
@@ -29,12 +29,12 @@ import { createDesktopJobsPage, jobsLogic } from './components/desktop/desktopJo
 import { createMobileHeader } from './components/mobile/mobileHeader';
 import { createMobileSearchBar } from './components/mobile/mobileSearchBar';
 import { createMobileNavbar } from './components/mobile/mobileNavbar';
-import { createMobileHomeLayout } from './components/mobile/mobileHome';
-import { MobileHomeLogic } from './components/mobile/mobileHome';
-import { createNetworkingMobilePage, NetworkingMobilePageLogic } from './components/mobile/mobileNetworking';
-import { createMobileJobLayout } from './components/mobile/mobileJobs'; 
-import { mobileJobLogic } from './components/mobile/mobileJobs';
-import { createMobileProfilePage } from './components/mobile/mobileProfile';
+import { createMobileHomeLayout } from './pages/mobile/mobileHome';
+import { MobileHomeLogic } from './pages/mobile/mobileHome';
+import { createNetworkingMobilePage, NetworkingMobilePageLogic } from './pages/mobile/mobileNetworking';
+import { createMobileJobLayout } from './pages/mobile/mobileJobs'; 
+import { mobileJobLogic } from './pages/mobile/mobileJobs';
+import { createMobileProfilePage } from './pages/mobile/mobileProfile';
 
 // ==========================================
 const app = document.querySelector<HTMLDivElement>('#app');
