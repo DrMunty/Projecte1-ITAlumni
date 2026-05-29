@@ -71,31 +71,31 @@ export function createHomePage(): string {
                             </div>
                         </div>
                         <p class="opinions-text">
-                            "Miau Miau"
+                            "Miau Miau."
                         </p>
                     </div>
                     <div class="opinions-card">
                         <div class="opinions-header">
-                            <img src="/img/coche.png" alt="Q2 color verde manzana" class="opinions-icon">
+                            <img src="/img/Emma.png" alt="Noia negra somrient" class="opinions-icon">
                             <div class="user-info">
-                                <h3> Q2 Verde Manzana</h3>
+                                <h3> Emma </h3>
                                 <div class="stars"> ★★ </div>
                             </div>
                         </div>
                         <p class="opinions-text">
-                            "A la que lleves 2.000km te dejo tirado en la cuneta desgraciado."
+                            “La meva xarxa d'aquesta comunitat ha estat clau: va revolucionar la meva carrera i em va mostrar camins insospitats."
                         </p>
                     </div>
                     <div class="opinions-card">
                         <div class="opinions-header">
-                            <img src="/img/durisimo.jpeg" alt="A strange face" class="opinions-icon">
+                            <img src="/img/Mikel.png" alt="Noi amb ulleres somrient" class="opinions-icon">
                             <div class="user-info">
-                                <h3> Strange Face</h3>
+                                <h3> Mikel </h3>
                                 <div class="stars"> ★★★ </div>
                             </div>
                         </div>
                         <p class="opinions-text">
-                            "Durisimo hermano"
+                            "Gràcies a IT Alumni vaig aconseguir la feina dels meus somnis en el món tech amb el seu increïble programa de mentoria."
                         </p>
                     </div>
                 </div>
