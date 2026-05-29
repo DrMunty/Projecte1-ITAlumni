@@ -19,7 +19,7 @@
 /* Cuadrícula de 3 columnas */
 .desktop-jobs-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas del mismo tamaño */
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 24px;
 }
 
@@ -34,6 +34,13 @@
     align-items: stretch;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03); /* Sombra suave */
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-icon {
+    width: 18px;  /* Ajusta la mida perquè quedi bé al costat del text */
+    height: 18px;
+    object-fit: contain; /* Evita que la icona es deformi */
+    opacity: 0.6; /* Opcional: fa que la icona quedi una mica més clara (grisenca) perquè no cridi tant l'atenció com el text que escriu l'usuari */
 }
 
 .desktop-job-card:hover {
@@ -108,4 +115,51 @@
     object-fit: cover; /* Para que la imagen no se deforme */
     border-radius: 8px;
     display: block;
+}
+
+/* ==========================================================================
+   DESKTOP JOBS PAGE STYLES
+   ========================================================================== */
+
+/* Barra superior i contenidor de filtres */
+.jobs-header-bar {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.jobs-filters-dropdowns {
+    display: flex;
+    gap: 15px;
+}
+
+/* Desplegables unificats */
+.job-dropdown {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #DEE1E6;
+    color: #565E6C;
+}
+
+/* Missatge quan no hi ha resultats a la cerca */
+.jobs-no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #9095A0;
+    padding: 40px;
+    font-style: italic;
+}
+
+/* Elements interns de la targeta (Card) */
+.job-highlighted-info {
+    color: #DF007F;
+    font-weight: 600;
+}
+
+.job-image-placeholder {
+    width: 100%;
+    height: 110px;
+    background-color: #E5E7EB;
+    border-radius: 8px;
 }
