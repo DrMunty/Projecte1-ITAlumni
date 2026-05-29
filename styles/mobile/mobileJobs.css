@@ -96,3 +96,12 @@
 .btn-mobile-apply:active {
     opacity: 0.8; 
 }
+
+/* --- ESTILOS EXTRAÍDOS DEL HTML --- */
+.mobile-jobs-no-results {
+    text-align: center;
+    color: #9095A0;
+    padding: 40px;
+    font-style: italic;
+    font-size: 14px;
+}

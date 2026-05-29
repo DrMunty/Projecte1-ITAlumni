@@ -84,7 +84,7 @@ export function mobileJobLogic(): void {
 
         if (filteredJobs.length === 0) {
             listContainer.innerHTML = `
-                <p style="text-align: center; color: #9095A0; padding: 40px; font-style: italic; font-size: 14px;">
+                <p class="mobile-jobs-no-results">
                     No job opportunities found matching your criteria.
                 </p>
             `;
@@ -97,7 +97,7 @@ export function mobileJobLogic(): void {
                     <h3>${job.name}</h3>
                     <p class="mobile-job-stack">${job.stack}</p>
                     <p class="mobile-job-details">
-                        ${job.contract} • ${job.remote ? '🌍 Remote' : '🏢 On-site'} | ${job.location}
+                        ${job.contract} • ${job.remote ? 'Remote' : 'On-site'} | ${job.location}
                     </p>
                     <span class="mobile-job-date">Posted ${job.posted} days ago</span>
                 </div>
