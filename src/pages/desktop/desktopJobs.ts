@@ -1,5 +1,5 @@
 import jobDataRaw from "../../data/jobs.json";
-import type { Job, JobFilters } from "../../components/global/jobFilterFunction";
+import type { Job, JobFilters } from "../../components/classes/Job";
 import { filterJobs } from "../../components/global/jobFilterFunction";
 
 // Assegurem el tipatge de les dades del JSON
