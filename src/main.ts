@@ -30,6 +30,7 @@ import { createMobileHeader } from './components/mobileHeader';
 import { createMobileSearchBar } from './components/mobileSearchBar';
 import { createMobileNavbar } from './components/mobileNavbar';
 import { createMobileHomeLayout } from './components/mobileHome';
+import { MobileHomeLogic } from './components/mobileHome';
 import { createNetworkingMobilePage, NetworkingMobilePageLogic } from './components/mobileNetworking';
 import { createMobileJobLayout } from './components/mobileJobs'; 
 import { mobileJobLogic } from './components/mobileJobs';
@@ -75,20 +76,22 @@ function renderApp(): void {
         // Injectem l'estructura de mòbil
         app.innerHTML = `
             ${createMobileHeader(currentTitle)}
-            ${createMobileSearchBar(searchPlaceholder)}
+            ${currentRoute !== 'profile' ? createMobileSearchBar(searchPlaceholder): ''}
             ${currentContent}
             ${createMobileNavbar(currentRoute)}
         `;
 
         // Activem els clics de la barra inferior de mòbil
         setupMobileListeners();
-
+        if (currentRoute === 'home'){
+            MobileHomeLogic();
+        }
         // Si som a networking mòbil, engeguem la seva lògica interactiva de cerca
-        if (currentRoute === 'networking') {
+        else if (currentRoute === 'networking') {
             NetworkingMobilePageLogic();
         }
 
-        if (currentRoute === 'jobs') {
+        else if (currentRoute === 'jobs') {
             mobileJobLogic();
         }
 
@@ -116,7 +119,7 @@ function renderApp(): void {
         const container = document.getElementById('desktop-container') as HTMLDivElement | null;
         if (container) {
             if (currentRoute === 'home') {
-                container.appendChild(createHomePage());
+                container.innerHTML= createHomePage();
             } else if (currentRoute === 'networking') {
                 // Injecció de l'esquelet de Xarxa + Activació de filtres i cerca per nom
                 container.innerHTML = createNetworkingPage();
@@ -139,6 +142,21 @@ function renderApp(): void {
 // ==========================================
 
 const setupMobileListeners = (): void => {
+
+    document.getElementById('btn-networking')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        currentRoute = 'networking';
+        renderApp();
+        window.scrollTo(0, 0);
+    });
+
+    document.getElementById('btn-jobs')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        currentRoute = 'jobs';
+        renderApp();
+        window.scrollTo(0, 0);
+    });
+
     document.getElementById('nav-go-home')?.addEventListener('click', (e) => {
         e.preventDefault();
         currentRoute = 'home';
@@ -165,7 +183,7 @@ const setupMobileListeners = (): void => {
 };
 
 const setupDesktopListeners = (): void => {
-    // Els IDs funcionen per a qualsevol de les dues Navbars de PC gràcies a que comparteixen IDs
+    
     document.getElementById('nav-pc-home')?.addEventListener('click', (e) => {
         e.preventDefault();
         currentRoute = 'home';

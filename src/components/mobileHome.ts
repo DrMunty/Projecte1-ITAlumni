@@ -9,7 +9,7 @@ export function createMobileHomeLayout(): string {
                 <div class="card-info">
                     <h2>Networking</h2>
                     <p>Connect with professionals in your field.</p>
-                    <button class="btn-mobile-action">Explore</button>
+                    <button id= "btn-networking" class="btn-mobile-action">Explore</button>
                 </div>
             </div>
 
@@ -20,9 +20,26 @@ export function createMobileHomeLayout(): string {
                 <div class="card-info">
                     <h2>Job Opportunities</h2>
                     <p>Discover openings tailored to your skills.</p>
-                    <button class="btn-mobile-action">Search Jobs</button>
+                    <button id= "btn-jobs" class="btn-mobile-action">Search Jobs</button>
                 </div>
             </div>
         </main>
         `
     }
+
+    export function MobileHomeLogic(): void {
+    const btnNetworking = document.getElementById('btn-go-networking') as HTMLButtonElement | null;
+    const btnJobs = document.getElementById('btn-go-jobs') as HTMLButtonElement | null;
+
+    if (btnNetworking) {
+        btnNetworking.addEventListener('click', () => {
+            window.location.hash = '#networking'; 
+        });
+    }
+
+    if (btnJobs) {
+        btnJobs.addEventListener('click', () => {
+            window.location.hash = '#jobs';
+        });
+    }
+}

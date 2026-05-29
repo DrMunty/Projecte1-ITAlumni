@@ -1,8 +1,5 @@
-export function createHomePage(): HTMLElement {
-  const container = document.createElement("div");
-  container.className = "home-page-wrapper";
-
-  container.innerHTML = `
+export function createHomePage(): string {
+  return `
         <main class="home-page-main">
             <section class="hero">
                 <div class="hero-content">
@@ -110,5 +107,5 @@ export function createHomePage(): HTMLElement {
             </section>
         </main>
     `;
-  return container;
+
 }
