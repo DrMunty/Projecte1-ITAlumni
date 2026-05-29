@@ -72,9 +72,12 @@
 }
 
 .search-icon {
-    font-size: 16px;
-    color: #9095A0;
+    width: 18px;  /* Ajusta la mida perquè quedi bé al costat del text */
+    height: 18px;
+    object-fit: contain; /* Evita que la icona es deformi */
+    opacity: 0.6; /* Opcional: fa que la icona quedi una mica més clara (grisenca) perquè no cridi tant l'atenció com el text que escriu l'usuari */
 }
+
 
 .search-input {
     border: none;
