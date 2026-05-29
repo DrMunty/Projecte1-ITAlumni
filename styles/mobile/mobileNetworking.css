@@ -1,5 +1,5 @@
-  /* Contenidor de la secció */
-.networking-content-mobile {
+/* Contenidor de la secció */
+  .networking-content-mobile {
     padding: 16px;
     padding-bottom: 120px;
     min-height: 100vh;
@@ -107,4 +107,10 @@
     color: #9095A0;
     padding: 30px;
     font-style: italic;
+}
+
+/* --- ESTILOS EXTRAÍDOS DEL HTML --- */
+.recent-activity-highlight {
+    color: #DF007F;
+    font-weight: 500;
 }

@@ -65,15 +65,16 @@ export function NetworkingMobilePageLogic(): void {
     
     if (currentSort === 'recent') {
         // Si està en recent, mostrem l'activitat i la data
-        bottomExtraInfo = `<span class="mobile-alumni-connections" style="color: #DF007F; font-weight: 500;">
-            🕒 ${user.recentActivity.activity} (${user.recentActivity.timeStamp})
+        // SE HA CAMBIADO EL STYLE POR UNA CLASE AQUÍ:
+        bottomExtraInfo = `<span class="mobile-alumni-connections recent-activity-highlight">
+            ${user.recentActivity.activity} (${user.recentActivity.timeStamp})
         </span>`;
     } else if (currentSort === 'connected') {
         // Si està en connected, mostrem les hores
-        bottomExtraInfo = `<span class="mobile-alumni-connections">⏳ ${user.hoursConnected} hours connected</span>`;
+        bottomExtraInfo = `<span class="mobile-alumni-connections"> ${user.hoursConnected} hours connected</span>`;
     } else {
         // Per defecte (popular), mostrem els amics
-        bottomExtraInfo = `<span class="mobile-alumni-connections">🤝 ${user.friends} friends</span>`;
+        bottomExtraInfo = `<span class="mobile-alumni-connections"> ${user.friends} friends</span>`;
     }
 
     return `
