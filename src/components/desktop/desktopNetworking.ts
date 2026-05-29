@@ -2,10 +2,10 @@
 import alumniDataRaw from '../data/users.json';
 
 // Importem els tipus utilitzant 'import type' per complir amb verbatimModuleSyntax
-import type { User, SortOption } from './filterFunction';
+import type { User, SortOption } from './global/filterFunction';
 
 // Importem les funcions pures de lògica
-import { sortUsersByName, sortUsersByOption } from './filterFunction';
+import { sortUsersByName, sortUsersByOption } from './global/filterFunction';
 
 // Assegurem el tipatge de les dades del JSON
 const alumniData: User[] = alumniDataRaw as User[];

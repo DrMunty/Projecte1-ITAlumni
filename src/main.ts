@@ -12,29 +12,29 @@ import '../styles/jobs.css';
 // ==========================================
 // 2. IMPORTS DE COMPONENTS D'ESCRIPTORI (PC)
 // ==========================================
-import { createNavbar } from './components/navbar';             
-import { createSecondNavbar } from './components/secondNavbar'; 
-import { createHomePage } from './components/Home';
-import { createFooter } from './components/footer';
+import { createNavbar } from './components/desktop/navbar';             
+import { createSecondNavbar } from './components/desktop/secondNavbar'; 
+import { createHomePage } from './components/desktop/Home';
+import { createFooter } from './components/desktop/footer';
 
 // Importem HTML i Lògica de la secció de Networking (PC)
-import { createNetworkingPage, NetworkingPageLogic } from './components/desktopNetworking';
+import { createNetworkingPage, NetworkingPageLogic } from './components/desktop/desktopNetworking';
 
 // Importem HTML i Lògica de la secció de Jobs (PC)
-import { createDesktopJobsPage, jobsLogic } from './components/desktopJobs';
+import { createDesktopJobsPage, jobsLogic } from './components/desktop/desktopJobs';
 
 // ==========================================
 // 3. IMPORTS DE COMPONENTS DE MÒBIL
 // ==========================================
-import { createMobileHeader } from './components/mobileHeader';
-import { createMobileSearchBar } from './components/mobileSearchBar';
-import { createMobileNavbar } from './components/mobileNavbar';
-import { createMobileHomeLayout } from './components/mobileHome';
-import { MobileHomeLogic } from './components/mobileHome';
-import { createNetworkingMobilePage, NetworkingMobilePageLogic } from './components/mobileNetworking';
-import { createMobileJobLayout } from './components/mobileJobs'; 
-import { mobileJobLogic } from './components/mobileJobs';
-import { createMobileProfilePage } from './components/mobileProfile';
+import { createMobileHeader } from './components/mobile/mobileHeader';
+import { createMobileSearchBar } from './components/mobile/mobileSearchBar';
+import { createMobileNavbar } from './components/mobile/mobileNavbar';
+import { createMobileHomeLayout } from './components/mobile/mobileHome';
+import { MobileHomeLogic } from './components/mobile/mobileHome';
+import { createNetworkingMobilePage, NetworkingMobilePageLogic } from './components/mobile/mobileNetworking';
+import { createMobileJobLayout } from './components/mobile/mobileJobs'; 
+import { mobileJobLogic } from './components/mobile/mobileJobs';
+import { createMobileProfilePage } from './components/mobile/mobileProfile';
 
 // ==========================================
 const app = document.querySelector<HTMLDivElement>('#app');

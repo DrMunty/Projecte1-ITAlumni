@@ -1,6 +1,6 @@
 import jobDataRaw from '../data/jobs.json';
-import type { Job, JobFilters } from './jobFilterFunction';
-import { filterJobs } from './jobFilterFunction';
+import type { Job, JobFilters } from './global/jobFilterFunction';
+import { filterJobs } from './global/jobFilterFunction';
 
 const jobData: Job[] = jobDataRaw as Job[];
 
