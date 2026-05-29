@@ -90,17 +90,14 @@
     color: #9095A0;
 }
 
-
 .mobile-main-content {
     flex: 1;
-    overflow-y: hidden;
     overflow-y: auto;
     padding: 20px 24px;
     display: flex;
     flex-direction: row;
     gap: 16px;
 }
-
 
 .mobile-card {
     background: #FFFFFF;
@@ -112,7 +109,6 @@
     min-width: 165px;
     flex-shrink: 0;
 }
-
 
 .card-image-placeholder {
     width: 100%;
@@ -300,7 +296,7 @@
     height: 48px;
     background-color: #E5E7EB;
     border-radius: 50%;
-    object-fit: contain;
+    object-fit: cover;
     flex-shrink: 0;
 }
 
@@ -428,7 +424,7 @@
 
 }
 
-.btn-mobile-apply:hover {
+.btn-mobile-apply:active {
     opacity: 0.8; 
 }
 
