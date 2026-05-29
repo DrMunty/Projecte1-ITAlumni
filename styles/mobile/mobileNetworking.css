@@ -35,6 +35,7 @@
 .mobile-networking-tabs {
     display: flex;
     gap: 16px;
+    margin-top: 5px;
 }
 
 /* Estil base dels botons estil pestanya */
