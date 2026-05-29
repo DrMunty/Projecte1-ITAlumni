@@ -105,12 +105,15 @@
     border: none;
     color: #FFFFFF;
     background-color: #DF007F;
-    transition: filter 0.2s;
+    transition: all 0.3s ease;
 }
 
 .btn-message:hover, .btn-connect:hover {
-    filter: brightness(1.4);
-    transition: ease;
+    transform: translateY(-3px);
+    filter: brightness(0.95);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    background: linear-gradient(90deg, #873AAA, #DF007F);
+    color: white;
 }
 
 /* --- COLUMNA INFERIOR --- */

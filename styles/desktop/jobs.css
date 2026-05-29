@@ -85,21 +85,26 @@
 
 /* Botón de la tarjeta */
 .btn-job-action {
-    background: transparent;
-    border: 1px solid #DF007F;
+    background:#FDF2F9;
     color: #DF007F;
     padding: 8px 16px;
     border-radius: 6px;
     font-family: inherit;
     font-size: 13px;
     font-weight: 600;
-    width: max-content; /* Se ajusta al texto */
+    width: max-content;
     cursor: pointer;
-    transition: background-color 0.2s;
+    border: none;
+    transition: all 0.3s ease;
 }
 
 .btn-job-action:hover {
     background-color: #FFF2F9;
+    transform: translateY(-3px);
+    filter: brightness(0.95);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    background: linear-gradient(90deg, #873AAA, #DF007F);
+    color: white;
 }
 
 /* Lado derecho de la tarjeta (Imagen) */
