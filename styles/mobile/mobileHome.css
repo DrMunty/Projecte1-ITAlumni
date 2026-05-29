@@ -1,0 +1,215 @@
+
+.mobile-app-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-color: #FFFFFF;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.mobile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px 10px 24px;
+    background-color: #FFFFFF;
+}
+
+.mobile-title {
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #171A1F;
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.icon-btn-box {
+    width: 40px;
+    height: 40px;
+    background-color: #FFFFFF;
+    border: 0px solid #DEE1E6;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.m-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: none;
+}
+
+.mobile-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+
+.mobile-search-section {
+    padding: 10px 24px 20px 24px;
+    background-color: #FFFFFF;
+}
+
+.search-bar-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: #F3F4F6;
+    border-radius: 8px;
+    padding: 12px 16px;
+    gap: 10px;
+}
+
+.search-icon {
+    font-size: 16px;
+    color: #9095A0;
+}
+
+.search-input {
+    border: none;
+    background: transparent;
+    width: 100%;
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 15px;
+    color: #171A1F;
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: #9095A0;
+}
+
+.mobile-main-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+.mobile-card {
+    background: #FFFFFF;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: calc(50% - 8px); 
+    min-width: 165px;
+    flex-shrink: 0;
+}
+
+.card-image-placeholder {
+    width: 100%;
+    height: 180px;
+    background-color: #E5E7EB;
+    border-radius: 12px;
+    overflow: hidden;
+    
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-info {
+    padding: 14px 4px;
+}
+
+.card-info h2 {
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #171A1F;
+    margin-bottom: 6px;
+}
+
+.card-info p {
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #9095A0;
+    margin-bottom: 14px;
+}
+
+
+.btn-mobile-action {
+    width: 100%;
+    height: 40px;
+    background-color: #FFFFFF;
+    border: 1px solid #DF007F;
+    color: #DF007F;
+    border-radius: 6px;
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-mobile-action:active {
+    background-color: #FFF2F9; /* Efecte clic suau */
+}
+
+/* --- BARRA DE NAVEGACIÓ INFERIOR FIXA --- */
+.bottom-nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+    background-color: #FFFFFF;
+    border-top: 1px solid #F3F4F6;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 15px; /* Espai extra per a la barra inferior de l'iPhone */
+    z-index: 100;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    gap: 4px;
+    flex: 1;
+}
+
+.nav-icon {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+.nav-item span {
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: #9095A0; /* Gris per als botons inactius */
+}
+
+/* Estat actiu (Home a la teva captura) */
+.nav-item.active span {
+    color: #DF007F; /* Rosa per a l'actiu */
+}
+
+.nav-item.active .nav-icon {
+    filter: invert(17%) sepia(96%) saturate(4645%) hue-rotate(318deg) brightness(91%) contrast(106%);
+}

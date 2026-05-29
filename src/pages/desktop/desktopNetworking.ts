@@ -1,11 +1,11 @@
 // 1. IMPORTS DE DADES I LÒGICA
-import alumniDataRaw from '../data/users.json';
+import alumniDataRaw from '../../data/users.json';
 
 // Importem els tipus utilitzant 'import type' per complir amb verbatimModuleSyntax
-import type { User, SortOption } from './global/filterFunction';
+import type { User, SortOption } from '../../components/global/filterFunction';
 
 // Importem les funcions pures de lògica
-import { sortUsersByName, sortUsersByOption } from './global/filterFunction';
+import { sortUsersByName, sortUsersByOption } from '../../components/global/filterFunction';
 
 // Assegurem el tipatge de les dades del JSON
 const alumniData: User[] = alumniDataRaw as User[];

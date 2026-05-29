@@ -1,13 +1,16 @@
 // ==========================================
 // 1. IMPORTS D'ESTILS (CSS)
 // ==========================================
-import '../styles/navbar.css';
-import '../styles/secondNavbar.css'; 
-import '../styles/home.css';
-import '../styles/footer.css';
-import '../styles/mobile.css'; 
-import '../styles/networking.css'; 
-import '../styles/jobs.css';
+import '../styles/desktop/navbar.css';
+import '../styles/desktop/secondNavbar.css'; 
+import '../styles/desktop/home.css';
+import '../styles/desktop/footer.css';
+import '../styles/desktop/networking.css'; 
+import '../styles/desktop/jobs.css';
+import '../styles/mobile/mobileHome.css';
+import '../styles/mobile/mobileNetworking.css';
+import '../styles/mobile/mobileJobs.css';
+import '../styles/mobile/mobileProfile.css';
 
 // ==========================================
 // 2. IMPORTS DE COMPONENTS D'ESCRIPTORI (PC)

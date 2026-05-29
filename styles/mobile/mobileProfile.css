@@ -1,0 +1,52 @@
+
+
+/* 1. Contenedor principal (Se mantiene arriba de forma correcta) */
+.mobile-profile-main-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 30%;          
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #ffffff; 
+}
+
+/* 2. La tarjeta contenedora */
+.mobile-profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+    width: 100%;
+    max-width: 340px;
+}
+
+/* 3. Título */
+.mobile-profile-title-text h1 {
+    font-size: 24px;
+    color: #171A1F;
+    margin: 0;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+/* 4. ¡AQUÍ ESTÁ EL TRUCO! Forzamos al contenedor a no recortar */
+.profile-image-placeholder {
+    width: 100%;
+    max-width: 280px;        /* Controlamos el tamaño del gato en horizontal */
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+/* 5. La imagen fluida */
+.profile-cat-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
