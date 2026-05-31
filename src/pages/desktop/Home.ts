@@ -1,8 +1,5 @@
-export function createHomePage(): HTMLElement {
-  const container = document.createElement("div");
-  container.className = "home-page-wrapper";
-
-  container.innerHTML = `
+export function createHomePage(): string {
+  return `
         <main class="home-page-main">
             <section class="hero">
                 <div class="hero-content">
@@ -15,14 +12,11 @@ export function createHomePage(): HTMLElement {
                         <button class="btn-empty">Mira que fem</button>
                     </div>
                     
-  <div class="image-container" style="width: 100%; max-width: 1100px; display: flex; justify-content: center; margin: 0 auto;">
-    <iframe class="main-video" 
-        style="width: 76vw; max-width: 1100px; height: calc(76vw * 9 / 16); max-height: 618px; border-radius: 16px; border: none; box-shadow: 0px 10px 30px rgba(0,0,0,0.1); pointer-events: none; display: block;"
-        src="https://www.youtube.com/embed/C2V8-4owXxc?autoplay=1&mute=1&controls=0&loop=1&playlist=C2V8-4owXxc&playsinline=1" 
-        frameborder="0" 
-        allow="autoplay; encrypted-media" 
-        allowfullscreen>
-    </iframe>
+  <div class="image-container">
+    <video class="main-video" autoplay loop muted playsinline>
+    <source src="/videos/home-stock-footage.mp4" type="video/mp4">
+    El teu navegador no suporta el tag de vídeo.
+</video>
 </div>
 
                 </div>
@@ -74,31 +68,31 @@ export function createHomePage(): HTMLElement {
                             </div>
                         </div>
                         <p class="opinions-text">
-                            "Miau Miau"
+                            "Miau Miau."
                         </p>
                     </div>
                     <div class="opinions-card">
                         <div class="opinions-header">
-                            <img src="/img/coche.png" alt="Q2 color verde manzana" class="opinions-icon">
+                            <img src="/img/Emma.png" alt="Noia negra somrient" class="opinions-icon">
                             <div class="user-info">
-                                <h3> Q2 Verde Manzana</h3>
+                                <h3> Emma </h3>
                                 <div class="stars"> ★★ </div>
                             </div>
                         </div>
                         <p class="opinions-text">
-                            "A la que lleves 2.000km te dejo tirado en la cuneta desgraciado."
+                            “La meva xarxa d'aquesta comunitat ha estat clau: va revolucionar la meva carrera i em va mostrar camins insospitats."
                         </p>
                     </div>
                     <div class="opinions-card">
                         <div class="opinions-header">
-                            <img src="/img/durisimo.jpeg" alt="A strange face" class="opinions-icon">
+                            <img src="/img/Mikel.png" alt="Noi amb ulleres somrient" class="opinions-icon">
                             <div class="user-info">
-                                <h3> Strange Face</h3>
+                                <h3> Mikel </h3>
                                 <div class="stars"> ★★★ </div>
                             </div>
                         </div>
                         <p class="opinions-text">
-                            "Durisimo hermano"
+                            "Gràcies a IT Alumni vaig aconseguir la feina dels meus somnis en el món tech amb el seu increïble programa de mentoria."
                         </p>
                     </div>
                 </div>
@@ -110,5 +104,5 @@ export function createHomePage(): HTMLElement {
             </section>
         </main>
     `;
-  return container;
+
 }

@@ -1,0 +1,222 @@
+[
+  { 
+    "name": "Carlos Ruiz", 
+    "role": "Software Engineer at TechCorp", 
+    "location": "Madrid, Spain", 
+    "friends": 145,
+    "hoursConnected": 34,
+    "recentActivity": {
+      "timeStamp": "26-05-21 10:15:30",
+      "activity": "Shared and article about Software Arquitecture"
+    }
+  },
+  { 
+    "name": "Maria Gomez", 
+    "role": "Product Manager at Innovate LLC", 
+    "location": "Austin, TX", 
+    "friends": 892,
+    "hoursConnected": 120,
+    "recentActivity": {
+      "timeStamp": "26-05-21 11:40:00",
+      "activity": "Connected with James Wilson"
+    }
+  },
+  { 
+    "name": "Liam O'Connor", 
+    "role": "Data Scientist at DataWorks", 
+    "location": "Dublin, Ireland", 
+    "friends": 320,
+    "hoursConnected": 45,
+    "recentActivity": {
+      "timeStamp": "26-05-21 09:30:45",
+      "activity": "Followed Mei Lin"
+    }
+  },
+  { 
+    "name": "Mei Lin", 
+    "role": "UX Designer at CreativeSpace", 
+    "location": "Seattle, WA", 
+    "friends": 1250,
+    "hoursConnected": 18,
+    "recentActivity": {
+      "timeStamp": "26-05-20 18:20:10",
+      "activity": "Shared and article about Web Accesibility"
+    }
+  },
+  { 
+    "name": "Elena Rostova", 
+    "role": "Marketing Director at GlobalReach", 
+    "location": "Berlin, Germany", 
+    "friends": 3400,
+    "hoursConnected": 85,
+    "recentActivity": {
+      "timeStamp": "26-05-21 11:25:00",
+      "activity": "Connected with Liam O'Connor"
+    }
+  },
+  { 
+    "name": "James Wilson", 
+    "role": "CEO at StartupX", 
+    "location": "London, UK", 
+    "friends": 5200,
+    "hoursConnected": 210,
+    "recentActivity": {
+      "timeStamp": "26-05-21 11:45:15",
+      "activity": "Followed Elena Rostova"
+    }
+  },
+  { 
+    "name": "Aisha Patel", 
+    "role": "CTO at NextGen Tech", 
+    "location": "San Francisco, CA", 
+    "friends": 1840,
+    "hoursConnected": 92,
+    "recentActivity": {
+      "timeStamp": "26-05-21 10:45:00",
+      "activity": "Shared and article about AI's Future"
+    }
+  },
+  { 
+    "name": "Diego Fernandez", 
+    "role": "Operations Manager at Logisys", 
+    "location": "Mexico City, Mexico", 
+    "friends": 415,
+    "hoursConnected": 27,
+    "recentActivity": {
+      "timeStamp": "26-05-21 07:30:00",
+      "activity": "Connected with Carlos Ruiz"
+    }
+  },
+  { 
+    "name": "Sophie Martin", 
+    "role": "HR Specialist at PeopleFirst", 
+    "location": "Paris, France", 
+    "friends": 630,
+    "hoursConnected": 56,
+    "recentActivity": {
+      "timeStamp": "26-05-21 11:15:00",
+      "activity": "Followed Emma Brown"
+    }
+  },
+  { 
+    "name": "Hiroshi Tanaka", 
+    "role": "Financial Analyst at MoneyTree", 
+    "location": "Tokyo, Japan", 
+    "friends": 275,
+    "hoursConnected": 14,
+    "recentActivity": {
+      "timeStamp": "26-05-20 15:45:20",
+      "activity": "Shared and article about Global Markets"
+    }
+  },
+  { 
+    "name": "Chloe Davies", 
+    "role": "Content Creator at BuzzMedia", 
+    "location": "Toronto, Canada", 
+    "friends": 8500,
+    "hoursConnected": 160,
+    "recentActivity": {
+      "timeStamp": "26-05-21 11:46:00",
+      "activity": "Connected with Mia Wong"
+    }
+  },
+  { 
+    "name": "Ahmed Al-Farsi", 
+    "role": "Systems Architect at CloudNet", 
+    "location": "Dubai, UAE", 
+    "friends": 945,
+    "hoursConnected": 40,
+    "recentActivity": {
+      "timeStamp": "26-05-21 05:20:10",
+      "activity": "Followed Noah Kim"
+    }
+  },
+  { 
+    "name": "Isabella Rossi", 
+    "role": "Sales Executive at MarketPro", 
+    "location": "Rome, Italy", 
+    "friends": 1120,
+    "hoursConnected": 73,
+    "recentActivity": {
+      "timeStamp": "26-05-21 08:45:00",
+      "activity": "Shared and article about B2B Strategies"
+    }
+  },
+  { 
+    "name": "Lucas Silva", 
+    "role": "Backend Developer at Appify", 
+    "location": "São Paulo, Brazil", 
+    "friends": 580,
+    "hoursConnected": 68,
+    "recentActivity": {
+      "timeStamp": "26-05-21 11:35:50",
+      "activity": "Connected with Emma Brown"
+    }
+  },
+  { 
+    "name": "Emma Brown", 
+    "role": "Consultant at StrategyGroup", 
+    "location": "Chicago, IL", 
+    "friends": 890,
+    "hoursConnected": 115,
+    "recentActivity": {
+      "timeStamp": "26-05-21 11:46:30",
+      "activity": "Followed Lucas Silva"
+    }
+  },
+  { 
+    "name": "Noah Kim", 
+    "role": "DevOps Engineer at InfraTech", 
+    "location": "Seoul, South Korea", 
+    "friends": 430,
+    "hoursConnected": 22,
+    "recentActivity": {
+      "timeStamp": "26-05-20 14:10:05",
+      "activity": "Shared and article about CI/CD Automatization"
+    }
+  },
+  { 
+    "name": "Olivia Taylor", 
+    "role": "Legal Advisor at LawFirm LLC", 
+    "location": "Boston, MA", 
+    "friends": 310,
+    "hoursConnected": 19,
+    "recentActivity": {
+      "timeStamp": "26-05-21 06:15:45",
+      "activity": "Connected with Omar Santos"
+    }
+  },
+  { 
+    "name": "Omar Santos", 
+    "role": "Graphic Designer at ArtHub", 
+    "location": "Barcelona, Spain", 
+    "friends": 2150,
+    "hoursConnected": 140,
+    "recentActivity": {
+      "timeStamp": "26-05-21 11:46:50",
+      "activity": "Followed Chloe Davies"
+    }
+  },
+  { 
+    "name": "Mia Wong", 
+    "role": "Accountant at FinancePros", 
+    "location": "Sydney, Australia", 
+    "friends": 150,
+    "hoursConnected": 8,
+    "recentActivity": {
+      "timeStamp": "26-05-19 09:05:00",
+      "activity": "Shared and article about Criptocoins"
+    }
+  },
+  { 
+    "name": "Ethan Miller", 
+    "role": "Project Manager at BuildIt", 
+    "location": "Denver, CO", 
+    "friends": 780,
+    "hoursConnected": 62,
+    "recentActivity": {
+      "timeStamp": "26-05-21 11:00:00",
+      "activity": "Connected with Aisha Patel"
+    }
+  }
+]

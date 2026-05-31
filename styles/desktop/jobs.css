@@ -1,0 +1,169 @@
+/* Contenedor principal */
+.desktop-jobs-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px 100px 20px;
+    font-family: "Source Sans 3", sans-serif;
+    color: var(--color-text-muted);
+}
+
+/* Título de la página */
+.jobs-page-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-text-main);
+    margin-bottom: 40px;
+}
+
+/* Cuadrícula de 3 columnas */
+.desktop-jobs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+/* Estilo de la tarjeta de trabajo */
+.desktop-job-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-bg-light);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03); 
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-icon {
+    width: 18px;  
+    height: 18px;
+    object-fit: contain; 
+    opacity: 0.6; 
+}
+
+.desktop-job-card:hover {
+    transform: translateY(-4px); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Lado izquierdo de la tarjeta (Textos y botón) */
+.job-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    padding-right: 16px;
+}
+
+.job-text-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 20px;
+}
+
+.job-text-info h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-text-main);
+    margin: 0;
+}
+
+.job-type {
+    font-size: 13px;
+    color: var(--color-text-light);
+    margin: 0;
+}
+
+.job-time {
+    font-size: 12px;
+    color: var(--color-text-light);
+    margin: 0;
+}
+
+/* Botón de la tarjeta */
+.btn-job-action {
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    width: max-content;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-job-action:hover {
+    transform: translateY(-3px);
+    filter: brightness(0.95);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    background: linear-gradient(90deg, var(--color-purple), var(--color-primary));
+    color: var(--color-white);
+}
+
+/* Lado derecho de la tarjeta (Imagen) */
+.job-card-image-wrapper {
+    width: 140px; 
+    flex-shrink: 0;
+}
+
+.job-card-image {
+    width: 100%;
+    height: 100%;
+    min-height: 110px;
+    object-fit: cover; 
+    border-radius: 8px;
+    display: block;
+}
+
+/* ==========================================================================
+   DESKTOP JOBS PAGE STYLES
+   ========================================================================== */
+
+/* Barra superior i contenidor de filtres */
+.jobs-header-bar {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.jobs-filters-dropdowns {
+    display: flex;
+    gap: 15px;
+}
+
+/* Desplegables unificats */
+.job-dropdown {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+}
+
+/* Missatge quan no hi ha resultats a la cerca */
+.jobs-no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: var(--color-text-light);
+    padding: 40px;
+    font-style: italic;
+}
+
+/* Elements interns de la targeta (Card) */
+.job-highlighted-info {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.job-image-placeholder {
+    width: 100%;
+    height: 110px;
+    background-color: var(--color-bg-placeholder);
+    border-radius: 8px;
+}

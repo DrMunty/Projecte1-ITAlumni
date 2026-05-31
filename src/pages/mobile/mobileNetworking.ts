@@ -1,0 +1,125 @@
+// 1. IMPORTS DE DADES I LÒGICA
+import alumniDataRaw from '../../data/users.json';
+
+// Importem els tipus utilitzant 'import type' per complir amb verbatimModuleSyntax
+import type { User } from '../../components/classes/User';
+
+// Importem les funcions pures de lògica
+import type { SortOption } from '../../components/global/userFilterFunction';
+import { sortUsersByName, sortUsersByOption,} from '../../components/global/userFilterFunction';
+
+// Assegurem el tipatge de les dades del JSON
+const alumniData: User[] = alumniDataRaw as User[];
+
+const defaultAvatar = 'icons/avatar-default.svg';
+
+// 2. EL ESQUELETO HTML (Estàtic)
+export function createNetworkingMobilePage(): string {
+     return `
+        <main class="networking-content-mobile">
+            
+            <div class="mobile-tabs-scroll-container">
+                <span class="mobile-filters-label">Filters:</span>
+                <div class="mobile-networking-tabs">
+                    <button class="mobile-tab-btn" data-sort="recent">Recent Activity</button>
+                    <button class="mobile-tab-btn active-tab" data-sort="popular">Popular</button>
+                    <button class="mobile-tab-btn" data-sort="connected">Most Connected</button>
+                </div>
+            </div>
+
+            <div class="mobile-alumni-list" id="mobile-alumni-container">
+                </div>
+        </main>
+    `;
+}
+
+// 2. LA LÒGICA INTERACTIVA DEL MÒBIL
+export function NetworkingMobilePageLogic(): void {
+    const searchInput = document.getElementById('mobile-search-input') as HTMLInputElement | null;
+    const alumniContainer = document.getElementById('mobile-alumni-container') as HTMLDivElement | null;
+    const tabButtons = document.querySelectorAll('.mobile-tab-btn');
+
+    if (!alumniContainer) return;
+
+    // Estat local
+    let searchTerm = searchInput?.value || '';
+    let currentSort: SortOption = 'popular';
+
+    const renderMobileList = (): void => {
+        // 1. Filtrar per nom en temps real
+        const filteredByName = sortUsersByName(alumniData, searchTerm);
+        
+        // MÀGIA AQUÍ: 2. Ordenem el resultat fent servir la teva funció
+        const finalUsers = sortUsersByOption(filteredByName, currentSort);
+
+        // 3. Pintem les targetes amb el resultat final
+        if (finalUsers.length === 0) {
+            alumniContainer.innerHTML = `<p class="no-results-text">No alumni found matching "${searchTerm}"</p>`;
+            return;
+        }
+
+        // Fixa't que ara llegeix user.role i user.friends de la teva interfície User
+        alumniContainer.innerHTML = finalUsers.map((user: User) => {
+    // Variable per canviar el contingut inferior segons el filtre
+    let bottomExtraInfo = '';
+    
+    if (currentSort === 'recent') {
+        // Si està en recent, mostrem l'activitat i la data
+        // SE HA CAMBIADO EL STYLE POR UNA CLASE AQUÍ:
+        bottomExtraInfo = `<span class="mobile-alumni-connections recent-activity-highlight">
+            ${user.recentActivity.activity} (${user.recentActivity.timeStamp})
+        </span>`;
+    } else if (currentSort === 'connected') {
+        // Si està en connected, mostrem les hores
+        bottomExtraInfo = `<span class="mobile-alumni-connections"> ${user.hoursConnected} hours connected</span>`;
+    } else {
+        // Per defecte (popular), mostrem els amics
+        bottomExtraInfo = `<span class="mobile-alumni-connections"> ${user.friends} friends</span>`;
+    }
+
+    return `
+        <div class="mobile-alumni-card">
+            <img 
+                src="${user.avatar ? user.avatar : defaultAvatar}" 
+                alt="Profile picture of ${user.name}" 
+                class="mobile-alumni-avatar"
+            >
+            <div class="mobile-alumni-info">
+                <h3>${user.name}</h3>
+                <p class="mobile-alumni-title">${user.role} • ${user.location}</p>
+                ${bottomExtraInfo}
+            </div>
+        </div>
+    `;
+}).join('');
+    };
+
+    // --- ESCOLTADORS ---
+    
+    // Pestanyes
+    tabButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            const clickedBtn = e.currentTarget as HTMLButtonElement;
+            const sortType = clickedBtn.getAttribute('data-sort') as SortOption;
+
+            if (!sortType) return;
+
+            tabButtons.forEach(btn => btn.classList.remove('active-tab'));
+            clickedBtn.classList.add('active-tab');
+
+            currentSort = sortType;
+            renderMobileList();
+        });
+    });
+
+    // Cercador
+    if (searchInput) {
+        searchInput.addEventListener('input', (e: Event) => {
+            searchTerm = (e.target as HTMLInputElement).value;
+            renderMobileList();
+        });
+    }
+
+    // Primera càrrega
+    renderMobileList();
+}

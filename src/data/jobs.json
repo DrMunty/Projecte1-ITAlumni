@@ -1,0 +1,182 @@
+[
+  {
+    "name": "React Frontend Developer",
+    "contract": "Full-time",
+    "remote": true,
+    "posted": 2,
+    "location": "Madrid",
+    "stack": "React, JavaScript, CSS",
+    "experienceLevel": true
+  },
+  {
+    "name": "SEO Specialist",
+    "contract": "Part-time",
+    "remote": false,
+    "posted": 5,
+    "location": "Barcelona",
+    "stack": "Google Analytics, Ahrefs, SEMrush",
+    "experienceLevel": true
+  },
+  {
+    "name": "Node.js Backend Developer",
+    "contract": "Full-time",
+    "remote": true,
+    "posted": 1,
+    "location": "Valencia",
+    "stack": "Node.js, Express, MongoDB",
+    "experienceLevel": true
+  },
+  {
+    "name": "UX/UI Designer",
+    "contract": "Full-time",
+    "remote": false,
+    "posted": 12,
+    "location": "Seville",
+    "stack": "Figma, Sketch, Adobe XD",
+    "experienceLevel": false
+  },
+  {
+    "name": "Junior Data Analyst",
+    "contract": "Internship",
+    "remote": true,
+    "posted": 0,
+    "location": "Bilbao",
+    "stack": "Python, SQL, Tableau",
+    "experienceLevel": false
+  },
+  {
+    "name": "Product Manager",
+    "contract": "Full-time",
+    "remote": false,
+    "posted": 8,
+    "location": "Madrid",
+    "stack": "Jira, Confluence, Trello",
+    "experienceLevel": true
+  },
+  {
+    "name": "DevOps Engineer",
+    "contract": "Full-time",
+    "remote": true,
+    "posted": 15,
+    "location": "Malaga",
+    "stack": "Docker, Kubernetes, Jenkins",
+    "experienceLevel": true
+  },
+  {
+    "name": "Content Writer",
+    "contract": "Part-time",
+    "remote": true,
+    "posted": 3,
+    "location": "Zaragoza",
+    "stack": "WordPress, Yoast, basic HTML",
+    "experienceLevel": false
+  },
+  {
+    "name": "SAP Consultant",
+    "contract": "Full-time",
+    "remote": false,
+    "posted": 20,
+    "location": "Barcelona",
+    "stack": "SAP ERP, ABAP",
+    "experienceLevel": true
+  },
+  {
+    "name": "Systems Administrator",
+    "contract": "Full-time",
+    "remote": false,
+    "posted": 4,
+    "location": "Valencia",
+    "stack": "Linux, Bash, Windows Server",
+    "experienceLevel": true
+  },
+  {
+    "name": "iOS Mobile Developer",
+    "contract": "Full-time",
+    "remote": true,
+    "posted": 7,
+    "location": "Madrid",
+    "stack": "Swift, Objective-C, Xcode",
+    "experienceLevel": true
+  },
+  {
+    "name": "Customer Support Representative",
+    "contract": "Weekends",
+    "remote": false,
+    "posted": 1,
+    "location": "Alicante",
+    "stack": "Zendesk, Salesforce Service",
+    "experienceLevel": false
+  },
+  {
+    "name": "Machine Learning Engineer",
+    "contract": "Full-time",
+    "remote": true,
+    "posted": 10,
+    "location": "Barcelona",
+    "stack": "Python, TensorFlow, PyTorch",
+    "experienceLevel": true
+  },
+  {
+    "name": "Scrum Master",
+    "contract": "Full-time",
+    "remote": true,
+    "posted": 6,
+    "location": "Seville",
+    "stack": "Agile, Jira, Miro",
+    "experienceLevel": true
+  },
+  {
+    "name": "B2B Account Manager",
+    "contract": "Full-time",
+    "remote": false,
+    "posted": 14,
+    "location": "Madrid",
+    "stack": "Salesforce, HubSpot",
+    "experienceLevel": true
+  },
+  {
+    "name": "Virtual Assistant",
+    "contract": "Part-time",
+    "remote": true,
+    "posted": 2,
+    "location": "Murcia",
+    "stack": "Google Workspace, Asana, Slack",
+    "experienceLevel": false
+  },
+  {
+    "name": "AWS Cloud Architect",
+    "contract": "Full-time",
+    "remote": true,
+    "posted": 9,
+    "location": "Malaga",
+    "stack": "AWS, Terraform, CloudFormation",
+    "experienceLevel": true
+  },
+  {
+    "name": "IT Support Technician",
+    "contract": "Rotating shifts",
+    "remote": false,
+    "posted": 5,
+    "location": "Bilbao",
+    "stack": "Active Directory, Office 365, Ticketing",
+    "experienceLevel": false
+  },
+  {
+    "name": "Cybersecurity Analyst",
+    "contract": "Full-time",
+    "remote": true,
+    "posted": 11,
+    "location": "Valencia",
+    "stack": "Kali Linux, Wireshark, SIEM",
+    "experienceLevel": true
+  },
+  {
+    "name": "QA Automation Tester",
+    "contract": "Full-time",
+    "remote": false,
+    "posted": 3,
+    "location": "Zaragoza",
+    "stack": "Selenium, Cypress, Postman",
+    "experienceLevel": false
+  }
+]

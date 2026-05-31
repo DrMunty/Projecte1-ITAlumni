@@ -6,21 +6,24 @@ export function createNavbar(): string {
             
             <nav>
                 <ul class="nav_links">
-                    <li><a>Inici</a></li> <li><a>Xarxa</a></li>
-                    <li><a>Oportunitats de feina</a></li>
+                    <li><a id= "nav-pc-home"> Inici </a></li> 
+                    <li><a id= "nav-pc-networking"> Xarxa </a></li>
+                    <li><a id= "nav-pc-jobs"> Oportunitats de feina </a></li>
                 </ul>
             </nav>
         </div>
         
         <div class="nav_actions">
-            <button class="nav-btn-outline">
+            <button id="btn-nav-register-1" class="nav-btn-outline">
                 <img src="icons/Icon.png" alt="" class="btn-icon"> 
                 Apunta't
             </button>
-            <button class="nav-btn-full">
+
+            <button id="btn-nav-register-2" class="nav-btn-full">
                 <img src="icons/Icon2.png" alt="" class="btn-icon"> 
                 Com et veuen?
             </button>
+
         </div>
     </header>
     `;
