@@ -8,8 +8,8 @@
     align-items: center;
     padding: 0 40px;
     height: 70px;
-    background-color: #FFFFFF;
-    font-family: "Source Sans 3", sans-serif;
+    background-color: var(--color-white);
+    font-family: inherit; /* Hereda la font del body global */
     box-sizing: border-box;
 }
 
@@ -28,7 +28,7 @@
 .second-nav-title {
     font-size: 35px;
     font-weight: 400;
-    color: #171A1F;
+    color: var(--color-text-main);
 }
 
 /* --- PART CENTRAL --- */
@@ -52,7 +52,7 @@
 .second-nav-links a {
     position: relative; /* Vital perquè l'animació ::after quedi sota el text */
     text-decoration: none;
-    color: #000000; 
+    color: var(--color-text-main); /* Unificat amb el gris fosc corporatiu */
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
@@ -62,7 +62,7 @@
 
 .second-nav-links a:hover,
 .second-nav-links a.active {
-    color: #DF007F;
+    color: var(--color-primary);
 }
 
 /* L'animació del subratllat (::after) */
@@ -74,7 +74,7 @@
     transform: translateX(-50%); 
     width: 0; 
     height: 3px;
-    background: #DF007F;
+    background: var(--color-primary);
     border-radius: 4px;
     transition: width 0.3s ease;
 }
