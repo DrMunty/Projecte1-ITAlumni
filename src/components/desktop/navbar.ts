@@ -14,14 +14,16 @@ export function createNavbar(): string {
         </div>
         
         <div class="nav_actions">
-            <button class="nav-btn-outline">
+            <button id="btn-nav-register-1" class="nav-btn-outline">
                 <img src="icons/Icon.png" alt="" class="btn-icon"> 
                 Apunta't
             </button>
-            <button class="nav-btn-full">
+
+            <button id="btn-nav-register-2" class="nav-btn-full">
                 <img src="icons/Icon2.png" alt="" class="btn-icon"> 
                 Com et veuen?
             </button>
+
         </div>
     </header>
     `;

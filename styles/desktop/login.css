@@ -1,0 +1,234 @@
+.register-page-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../public/img/register-background-image.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: "Source Sans 3", sans-serif;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.register-card {
+    background-color: #FFFFFF;
+    width: 100%;
+    max-width: 540px; 
+    min-height: 100vh; 
+    padding: 60px 80px; 
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.close-register-btn {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: #9095A0;
+    cursor: pointer;
+    transition: color 0.2s;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-register-btn:hover {
+    color: #171A1F;
+}
+
+.register-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #171A1F;
+    margin: 0 0 12px 0;
+    text-align: center;
+}
+
+.register-subtitle {
+    font-size: 14px;
+    color: #171A1F;
+    margin: 0 0 40px 0;
+    text-align: center;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    background-color: #F3F4F6;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    padding: 0 16px;
+    height: 48px;
+    border: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.input-group:focus-within {
+    border-color: #DF007F; 
+    background-color: #FFFFFF;
+}
+
+.input-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    margin-right: 12px;
+    opacity: 0.6; 
+}
+
+.register-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-family: inherit;
+    font-size: 14px;
+    color: #171A1F;
+    height: 100%;
+}
+
+.register-input::placeholder {
+    color: #9095A0;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    margin-bottom: 24px;
+}
+
+.register-checkbox {
+    margin-right: 12px;
+    width: 18px;
+    height: 18px;
+    accent-color: #DF007F;
+    cursor: pointer;
+}
+
+.checkbox-group label {
+    font-size: 13px;
+    color: #565E6C;
+    cursor: pointer;
+}
+
+.btn-register-main {
+    width: 100%;
+    height: 48px;
+    background-color: #DF007F;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-register-main:hover {
+    background-color: #C2006F;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #9095A0;
+    font-size: 14px;
+    margin: 32px 0;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #DEE1E6;
+}
+
+.divider span {
+    padding: 0 16px;
+}
+
+.social-buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.btn-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 44px;
+    border-radius: 6px;
+    border: none;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: filter 0.2s;
+}
+
+.btn-social:hover {
+    filter: brightness(0.96);
+}
+
+.social-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    margin-right: 10px;
+}
+
+.btn-apple {
+    background-color:#949292;
+    color: #FFFFFF;
+}
+
+.btn-google {
+    background-color: #FEF2F2; 
+    color: #EF4444; 
+}
+
+.btn-facebook {
+    background-color: #F0F9FF; 
+    color: #3B82F6; 
+}
+
+.login-prompt {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 14px;
+    color: #171A1F;
+    font-weight: 500;
+}
+
+.login-link {
+    color: #DF007F;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 6px;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}

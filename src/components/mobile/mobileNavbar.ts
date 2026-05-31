@@ -1,4 +1,4 @@
-export function createMobileNavbar(activeTab: 'home' | 'networking' | 'jobs' | 'profile'): string {
+export function createMobileNavbar(activeTab: 'home' | 'networking' | 'jobs' | 'profile' | 'register'): string {
     return `
     <nav class="bottom-nav">
         <a href="#" class="nav-item ${activeTab === 'home' ? 'active' : ''}" id="nav-go-home">

@@ -5,6 +5,7 @@ import '../styles/desktop/navbar.css';
 import '../styles/desktop/secondNavbar.css'; 
 import '../styles/desktop/home.css';
 import '../styles/desktop/footer.css';
+import '../styles/desktop/login.css';
 import '../styles/desktop/networking.css'; 
 import '../styles/desktop/jobs.css';
 import '../styles/mobile/mobileHome.css';
@@ -20,6 +21,7 @@ import { createSecondNavbar } from './components/desktop/secondNavbar';
 import { createHomePage } from './pages/desktop/Home';
 import { createFooter } from './components/desktop/footer';
 
+import { createDesktopRegisterPage } from './pages/desktop/desktopLogin';
 // Importem HTML i Lògica de la secció de Networking (PC)
 import { createNetworkingPage, NetworkingPageLogic } from './pages/desktop/desktopNetworking';
 
@@ -41,7 +43,7 @@ import { createMobileProfilePage } from './pages/mobile/mobileProfile';
 
 // ==========================================
 const app = document.querySelector<HTMLDivElement>('#app');
-let currentRoute: 'home' | 'networking' | 'jobs' | 'profile' = 'home';
+let currentRoute: 'home' | 'networking' | 'jobs' | 'profile' | 'register' = 'home';
 
 
 function renderApp(): void {
@@ -104,6 +106,18 @@ function renderApp(): void {
         // ==========================================
         
         // PAS A: Decidim quina de les dues Navbars pintem
+        if (currentRoute === 'register'){
+            app.innerHTML = createDesktopRegisterPage();
+
+            document.getElementById('btn-close-register')?.addEventListener('click', (e) => {
+                e.preventDefault();
+                currentRoute = 'home'; 
+                renderApp();          
+                window.scrollTo(0, 0);
+            });
+        }
+
+        else {
         let activeNavbar = '';
         if (currentRoute === 'home') {
             activeNavbar = createNavbar(); // La de la Home principal
@@ -134,6 +148,7 @@ function renderApp(): void {
                 jobsLogic(); 
             }
         }
+    }
         
         // PAS D: Activem els escoltadors de clics de la Navbar superior de PC
         setupDesktopListeners(); 
@@ -186,6 +201,20 @@ const setupMobileListeners = (): void => {
 };
 
 const setupDesktopListeners = (): void => {
+
+    document.getElementById('btn-nav-register-1')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        currentRoute = 'register';
+        renderApp();
+        window.scrollTo(0, 0);
+    });
+
+    document.getElementById('btn-nav-register-2')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        currentRoute = 'register';
+        renderApp();
+        window.scrollTo(0, 0);
+    });
     
     document.getElementById('nav-pc-home')?.addEventListener('click', (e) => {
         e.preventDefault();
