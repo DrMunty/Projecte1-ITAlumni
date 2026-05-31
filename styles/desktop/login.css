@@ -1,0 +1,278 @@
+.register-page-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../public/img/register-background-image.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: "Source Sans 3", sans-serif;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.register-card {
+    background-color: var(--color-white);
+    width: 100%;
+    max-width: 540px; 
+    min-height: 100vh; 
+    padding: 60px 80px; 
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.close-register-btn {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: var(--color-text-light);
+    cursor: pointer;
+    transition: color 0.2s;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-register-btn:hover {
+    color: var(--color-text-main);
+}
+
+.register-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-text-main);
+    margin: 0 0 12px 0;
+    text-align: center;
+}
+
+.register-subtitle {
+    font-size: 14px;
+    color: var(--color-text-main);
+    margin: 0 0 40px 0;
+    text-align: center;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-bg-light);
+    border-radius: 6px;
+    margin-bottom: 16px;
+    padding: 0 16px;
+    height: 48px;
+    border: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.input-group:focus-within {
+    border-color: var(--color-primary); 
+    background-color: var(--color-white);
+}
+
+.input-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    margin-right: 12px;
+    opacity: 0.6; 
+}
+
+.register-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--color-text-main);
+    height: 100%;
+}
+
+.register-input::placeholder {
+    color: var(--color-text-light);
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    margin-bottom: 24px;
+}
+
+.register-checkbox {
+    margin-right: 12px;
+    width: 18px;
+    height: 18px;
+    accent-color: var(--color-primary);
+    cursor: pointer;
+}
+
+.checkbox-group label {
+    font-size: 13px;
+    color: var(--color-text-muted);
+    cursor: pointer;
+}
+
+.btn-register-main {
+    width: 100%;
+    height: 48px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-register-main:hover {
+    background-color: var(--color-primary-hover);
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--color-text-light);
+    font-size: 14px;
+    margin: 32px 0;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.divider span {
+    padding: 0 16px;
+}
+
+.social-buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.btn-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 44px;
+    border-radius: 6px;
+    border: none;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: filter 0.2s;
+}
+
+.btn-social:hover {
+    filter: brightness(0.96);
+}
+
+.social-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    margin-right: 10px;
+}
+
+.btn-social .social-icon,
+.btn-social .social-icon:hover {
+    transform: none !important;
+    opacity: 1 !important;
+}
+
+.btn-apple {
+    background-color: #949292;
+    color: var(--color-white);
+}
+
+.btn-google {
+    background-color: #FEF2F2; 
+    color: #EF4444; 
+}
+
+.btn-facebook {
+    background-color: #F0F9FF; 
+    color: #3B82F6; 
+}
+
+.login-prompt {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--color-text-main);
+    font-weight: 500;
+}
+
+.login-link {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 6px;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    
+    .register-page-container {
+        background-image: none; 
+        background-color: var(--color-white);
+    }
+
+    .register-card {
+        padding: 60px 20px 20px 20px;
+        box-shadow: none; 
+        justify-content: flex-start;
+    }
+
+    .close-register-btn {
+        top: 16px;
+        left: 16px;
+    }
+
+    .register-title {
+        margin-top: 20px;
+        font-size: 28px;
+    }
+
+    .register-subtitle {
+        display: none; 
+    }
+
+    .input-group, 
+    .btn-register-main, 
+    .btn-social {
+        height: 52px; 
+    }
+    
+    .divider {
+        margin: 24px 0;
+    }
+}

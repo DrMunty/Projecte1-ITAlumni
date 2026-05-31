@@ -1,0 +1,117 @@
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    border-bottom: 1px solid var(--color-bg-light);
+    background-color: var(--color-white);
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 200px; 
+}
+
+.nav_links {
+    list-style: none;
+    display: flex;
+    gap: 40px; 
+}
+
+.nav_links li {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.nav_links li a {
+    display: inline-block;
+    padding: 10px 16px;
+    color: var(--color-text-muted);
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.nav_links li a.active,
+.nav_links li a:hover {
+    color: var(--color-primary);
+}
+
+.nav_links li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0px; 
+    left: 50%;
+    transform: translateX(-50%); 
+    width: 0; 
+    height: 3px;
+    background: var(--color-primary);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.nav_links li a.active::after,
+.nav_links li a:hover::after {
+    width: 70%; 
+}
+
+.nav_actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.nav-btn-outline, 
+.nav-btn-full {
+    padding: 10px 20px;
+    border-radius: 8px; 
+    font-size: 14px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; 
+    text-decoration: none;
+}
+
+.nav-btn-outline {
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    background: transparent;
+}
+
+.nav-btn-full {
+    background: linear-gradient(90deg, var(--color-purple), var(--color-primary));
+    color: var(--color-white);
+    border: none;
+}
+
+.nav-btn-full:hover, 
+.nav-btn-outline:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+    box-shadow: 0 4px 10px rgba(223, 0, 127, 0.15);
+}
+
+.btn-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.logo {
+    height: 35px;
+    width: auto;
+    cursor: pointer;
+    transition: filter 0.3s ease;
+    margin-top: -10px;
+}
+
+.logo:hover {
+    filter: brightness(1.1);
+}

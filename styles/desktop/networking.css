@@ -1,0 +1,164 @@
+.desktop-networking-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: "Source Sans 3", sans-serif;
+    color: var(--color-text-muted);
+}
+
+.networking-top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.desktop-search-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 8px 16px;
+    width: 300px;
+}
+
+.search-icon {
+    width: 18px;  
+    height: 18px;
+    object-fit: contain; 
+    opacity: 0.6; 
+}
+
+.desktop-search-input {
+    border: none;
+    outline: none;
+    margin-left: 10px;
+    font-family: inherit;
+    width: 100%;
+}
+
+.desktop-filters {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-size: 14px;
+}
+
+.filter-label {
+    font-weight: 700;
+    color: var(--color-text-main);
+}
+
+.filter-option {
+    cursor: pointer;
+    color: var(--color-text-light);
+    padding-bottom: 4px;
+}
+
+.filter-option.active {
+    color: var(--color-primary);
+    font-weight: 600;
+    border-bottom: 2px solid var(--color-primary);
+}
+
+.desktop-profiles-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 50px;
+}
+
+.desktop-profile-card,
+.desktop-suggestion-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.desktop-profile-card h3,
+.desktop-suggestion-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text-main);
+    margin: 0;
+}
+
+.card-role, .card-location {
+    font-size: 13px;
+    margin: 0;
+}
+
+.btn-message, .btn-connect {
+    margin-top: 10px;
+    padding: 8px 24px;
+    border-radius: 6px;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    border: none;
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    transition: all 0.3s ease;
+}
+
+.btn-message:hover, .btn-connect:hover {
+    transform: translateY(-3px);
+    filter: brightness(0.95);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    background: linear-gradient(90deg, var(--color-purple), var(--color-primary));
+    color: var(--color-white);
+}
+
+.networking-content-column {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 400px
+}
+
+.networking-content-column h2 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-text-main);
+    margin-bottom: 20px;
+}
+
+.activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.activity-item {
+    font-size: 13px;
+    margin: 0;
+}
+
+.suggestions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.no-results-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: var(--color-text-light);
+    padding: 40px;
+    font-style: italic;
+}
+
+.card-extra-info {
+    font-size: 12px;
+    color: var(--color-primary);
+    margin-top: 6px;
+    line-height: 1.4;
+}
+
+.activity-timestamp {
+    color: var(--color-text-light);
+    font-size: 10px;
+}
