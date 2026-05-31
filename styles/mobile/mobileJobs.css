@@ -10,13 +10,13 @@
     padding-bottom: 100px; 
 }
 
+/* --- FILTRES --- */
 .mobile-filters-container {
     display: flex;
     flex-direction: column;
     gap: 12px;
     margin-bottom: 20px; 
 }
-
 
 .mobile-filters-row {
     display: flex;
@@ -29,9 +29,9 @@
     min-width: 0;
     padding: 10px 6px;
     border-radius: 8px;
-    border: 1px solid #DEE1E6;
-    background-color: #F3F4F6;
-    color: #565E6C;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-bg-light);
+    color: var(--color-text-muted);
     font-size: 14px;
     font-family: inherit;
     outline: none;
@@ -40,6 +40,7 @@
     overflow: hidden;
 }
 
+/* --- LLISTA D'OFERTES --- */
 .mobile-jobs-list-container {
     display: flex;
     flex-direction: column;
@@ -47,8 +48,8 @@
 }
 
 .mobile-job-card {
-    background-color: #FFFFFF;
-    border: 1px solid #DEE1E6;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
     border-radius: 12px;
     padding: 16px;
     display: flex;
@@ -60,47 +61,45 @@
 .mobile-job-info h3 {
     font-size: 16px;
     margin: 0 0 4px 0;
-    color: #171A1F;
+    color: var(--color-text-main);
 }
 
 .mobile-job-stack {
     font-size: 13px;
-    color: #DF007F;
+    color: var(--color-primary);
     font-weight: 600;
     margin: 0 0 4px 0;
 }
 
 .mobile-job-details {
     font-size: 12px;
-    color: #565E6C;
+    color: var(--color-text-muted);
     margin: 0 0 8px 0;
 }
 
 .mobile-job-date {
     font-size: 11px;
-    color: #9095A0;
+    color: var(--color-text-light);
 }
 
 .btn-mobile-apply {
-    background-color: #DF007F;
+    background-color: var(--color-primary);
     border: none;
     padding: 10px 20px;
     border-radius: 6px;
     font-size: 12px;
     font-weight: 600;
     cursor: pointer;
-    color: #FFFFFF
-
+    color: var(--color-white);
 }
 
 .btn-mobile-apply:active {
     opacity: 0.8; 
 }
 
-/* --- ESTILOS EXTRAÍDOS DEL HTML --- */
 .mobile-jobs-no-results {
     text-align: center;
-    color: #9095A0;
+    color: var(--color-text-light);
     padding: 40px;
     font-style: italic;
     font-size: 14px;
