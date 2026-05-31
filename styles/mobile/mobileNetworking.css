@@ -1,12 +1,10 @@
-/* Contenidor de la secció */
-  .networking-content-mobile {
+.networking-content-mobile {
     padding: 16px;
     padding-bottom: 120px;
     min-height: 100vh;
     overflow-y: auto;
 }
 
-/* Contenidor de la barra de filtres (activa el desplaçament horitzontal si la pantalla és minúscula) */
 .mobile-tabs-scroll-container {
     display: flex;
     align-items: center;
@@ -19,46 +17,40 @@
     -webkit-overflow-scrolling: touch;
 }
 
-/* Ocultem la barra de scroll visualment perquè quedi més net */
 .mobile-tabs-scroll-container::-webkit-scrollbar {
     display: none;
 }
 
-/* El text fix de "Filters:" */
 .mobile-filters-label {
     font-weight: 700;
-    color: #171A1F;
+    color: var(--color-text-main);
     font-size: 14px;
 }
 
-/* El bloc de botons agrupats */
 .mobile-networking-tabs {
     display: flex;
     gap: 16px;
     margin-top: 5px;
 }
 
-/* Estil base dels botons estil pestanya */
 .mobile-tab-btn {
     background: none;
     border: none;
-    padding: 6px 0 8px 0; /* Coixí a baix preparant el terreny per a la línia */
+    padding: 6px 0 8px 0;
     font-size: 14px;
     font-weight: 600;
-    color: #9095A0; /* Gris clar per a les pestanyes inactives */
+    color: var(--color-text-light);
     cursor: pointer;
-    border-bottom: 3px solid transparent; /* Línia transparent invisible d'inici per evitar salts visuals */
+    border-bottom: 3px solid transparent; 
     font-family: inherit;
     transition: all 0.2s ease;
 }
 
-/* L'ESTIL DE LA PESTANYA ACTIVA (IGUAL QUE LA TEVA FOTO) */
 .mobile-tab-btn.active-tab {
-    color: #DF007F; /* Color rosa/magenta corporatiu */
-    border-bottom: 3px solid #DF007F; /* La línia inferior rosa */
+    color: var(--color-primary); 
+    border-bottom: 3px solid var(--color-primary); 
 }
 
-/* --- ESTILS DE LES TARGETES D'ALUMNES MÒBIL --- */
 .mobile-alumni-list {
     display: flex;
     flex-direction: column;
@@ -66,8 +58,8 @@
 }
 
 .mobile-alumni-card {
-    background-color: #FFFFFF;
-    border: 1px solid #DEE1E6;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
     border-radius: 12px;
     padding: 16px;
     display: flex;
@@ -79,7 +71,7 @@
 .mobile-alumni-avatar {
     width: 48px;
     height: 48px;
-    background-color: #E5E7EB;
+    background-color: var(--color-bg-placeholder);
     border-radius: 50%;
     object-fit: cover;
     flex-shrink: 0;
@@ -88,30 +80,29 @@
 .mobile-alumni-info h3 {
     margin: 0;
     font-size: 16px;
-    color: #171A1F;
+    color: var(--color-text-main);
     font-weight: 600;
 }
 
 .mobile-alumni-title {
     margin: 2px 0 4px 0;
     font-size: 13px;
-    color: #565E6C;
+    color: var(--color-text-muted);
 }
 
 .mobile-alumni-connections {
     font-size: 11px;
-    color: #9095A0;
+    color: var(--color-primary);
 }
 
 .no-results-text {
     text-align: center;
-    color: #9095A0;
+    color: var(--color-text-light);
     padding: 30px;
     font-style: italic;
 }
 
-/* --- ESTILOS EXTRAÍDOS DEL HTML --- */
 .recent-activity-highlight {
-    color: #DF007F;
+    color: var(--color-primary);
     font-weight: 500;
 }
