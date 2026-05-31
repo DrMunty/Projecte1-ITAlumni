@@ -12,14 +12,11 @@ export function createHomePage(): string {
                         <button class="btn-empty">Mira que fem</button>
                     </div>
                     
-  <div class="image-container" style="width: 100%; max-width: 1100px; display: flex; justify-content: center; margin: 0 auto;">
-    <iframe class="main-video" 
-        style="width: 76vw; max-width: 1100px; height: calc(76vw * 9 / 16); max-height: 618px; border-radius: 16px; border: none; box-shadow: 0px 10px 30px rgba(0,0,0,0.1); pointer-events: none; display: block;"
-        src="https://www.youtube.com/embed/C2V8-4owXxc?autoplay=1&mute=1&controls=0&loop=1&playlist=C2V8-4owXxc&playsinline=1" 
-        frameborder="0" 
-        allow="autoplay; encrypted-media" 
-        allowfullscreen>
-    </iframe>
+  <div class="image-container">
+    <video class="main-video" autoplay loop muted playsinline>
+    <source src="/videos/home-stock-footage.mp4" type="video/mp4">
+    El teu navegador no suporta el tag de vídeo.
+</video>
 </div>
 
                 </div>
