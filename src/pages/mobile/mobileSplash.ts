@@ -1,5 +1,3 @@
-// src/pages/mobile/mobileSplash.ts
-
 export function createMobileSplashPage(): string {
     return `
         <div class="mobile-splash-container">

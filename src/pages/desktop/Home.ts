@@ -1,5 +1,5 @@
 export function createHomePage(): string {
-  return `
+    return `
         <main class="home-page-main">
             <section class="hero">
                 <div class="hero-content">
@@ -12,19 +12,18 @@ export function createHomePage(): string {
                         <button class="btn-empty">Mira que fem</button>
                     </div>
                     
-  <div class="image-container">
-    <video class="main-video" autoplay loop muted playsinline>
-    <source src="/videos/home-stock-footage.mp4" type="video/mp4">
-    El teu navegador no suporta el tag de vídeo.
-</video>
-</div>
-
+                    <div class="image-container">
+                        <video class="main-video" autoplay loop muted playsinline>
+                            <source src="/videos/home-stock-footage.mp4" type="video/mp4">
+                            El teu navegador no suporta el tag de vídeo.
+                        </video>
+                    </div>
                 </div>
             </section>
 
             <section class="benefits">
                 <div class="benefits-title">
-                   <h2> Què guanyes en formar-ne part? </h2>
+                    <h2>Què guanyes en formar-ne part?</h2>
                 </div>
                 <div class="benefits-container">
                     <div class="benefits-card">
@@ -33,7 +32,7 @@ export function createHomePage(): string {
                             Comparteix i no perdis el contacte: Puja els teus moments importants, 
                             explica com va tot i queda amb els companys.
                         </p>
-                        <button class="btn-benefits full"> Apunta't ja </button>
+                        <button class="btn-benefits full">Apunta't ja</button>
                     </div>
                     <div class="benefits-card">
                         <img src="/icons/Group.png" alt="Discussions" class="benefits-icon">
@@ -56,15 +55,15 @@ export function createHomePage(): string {
 
             <section class="opinions">
                 <div class="opinions-title">
-                   <h2> T'ensenyem el que opinen els nostres súper-usuaris!</h2>
+                    <h2>T'ensenyem el que opinen els nostres súper-usuaris!</h2>
                 </div>
                 <div class="opinions-container">
                     <div class="opinions-card">
                         <div class="opinions-header">
                             <img src="/img/Mochi2.jpeg" alt="My cat" class="opinions-icon">
                             <div class="user-info">
-                                <h3> Mochi the Cat</h3>
-                                <div class="stars"> ★★★★★ </div>
+                                <h3>Mochi the Cat</h3>
+                                <div class="stars">★★★★★</div>
                             </div>
                         </div>
                         <p class="opinions-text">
@@ -75,8 +74,8 @@ export function createHomePage(): string {
                         <div class="opinions-header">
                             <img src="/img/Emma.png" alt="Noia negra somrient" class="opinions-icon">
                             <div class="user-info">
-                                <h3> Emma </h3>
-                                <div class="stars"> ★★ </div>
+                                <h3>Emma</h3>
+                                <div class="stars">★★</div>
                             </div>
                         </div>
                         <p class="opinions-text">
@@ -87,8 +86,8 @@ export function createHomePage(): string {
                         <div class="opinions-header">
                             <img src="/img/Mikel.png" alt="Noi amb ulleres somrient" class="opinions-icon">
                             <div class="user-info">
-                                <h3> Mikel </h3>
-                                <div class="stars"> ★★★ </div>
+                                <h3>Mikel</h3>
+                                <div class="stars">★★★</div>
                             </div>
                         </div>
                         <p class="opinions-text">
@@ -104,5 +103,4 @@ export function createHomePage(): string {
             </section>
         </main>
     `;
-
 }

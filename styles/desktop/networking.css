@@ -1,4 +1,3 @@
-/* Contenedor principal con márgenes laterales */
 .desktop-networking-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -7,7 +6,6 @@
     color: var(--color-text-muted);
 }
 
-/* --- BARRA SUPERIOR (Buscador y Filtros) --- */
 .networking-top-bar {
     display: flex;
     justify-content: space-between;
@@ -61,10 +59,9 @@
 .filter-option.active {
     color: var(--color-primary);
     font-weight: 600;
-    border-bottom: 2px solid var(--color-primary); /* La línea rosa debajo de Popular */
+    border-bottom: 2px solid var(--color-primary);
 }
 
-/* --- CUADRÍCULA DE PERFILES (4 columnas) --- */
 .desktop-profiles-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -72,7 +69,6 @@
     margin-bottom: 50px;
 }
 
-/* Estilo de la tarjeta general (sirve para arriba y abajo) */
 .desktop-profile-card,
 .desktop-suggestion-card {
     display: flex;
@@ -116,12 +112,11 @@
     color: var(--color-white);
 }
 
-/* --- COLUMNA INFERIOR --- */
 .networking-content-column {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    max-width: 400px; /* Limitamos el ancho para que coincida con tu diseño a la izquierda */
+    max-width: 400px
 }
 
 .networking-content-column h2 {
@@ -148,7 +143,6 @@
     gap: 24px;
 }
 
-/* --- ESTILOS EXTRAÍDOS DEL HTML --- */
 .no-results-message {
     grid-column: 1 / -1;
     text-align: center;

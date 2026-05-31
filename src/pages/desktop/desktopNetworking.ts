@@ -1,17 +1,12 @@
-// 1. IMPORTS DE DADES I LÒGICA
 import alumniDataRaw from '../../data/users.json';
 
-// Importem els tipus utilitzant 'import type' per complir amb verbatimModuleSyntax
 import type { User } from '../../components/classes/User';
 
-// Importem les funcions pures de lògica
 import type { SortOption } from '../../components/global/userFilterFunction';
 import { sortUsersByName, sortUsersByOption } from '../../components/global/userFilterFunction';
 
-// Assegurem el tipatge de les dades del JSON
 const alumniData: User[] = alumniDataRaw as User[];
 
-// 2. EL ESQUELETO HTML (Estàtic)
 export function createNetworkingPage(): string {
     return `
     <div class="desktop-networking-container">
@@ -36,32 +31,27 @@ export function createNetworkingPage(): string {
     `;
 }
 
-// 3. LA LÒGICA DINÀMICA DE LA PÀGINA
 export function NetworkingPageLogic(): void {
-    // Seleccionem els elements del DOM de forma segura amb tipatge estricte
+  
     const searchInput = document.getElementById('networking-search-input') as HTMLInputElement | null;
     const gridContainer = document.getElementById('dynamic-profiles-grid') as HTMLDivElement | null;
     const filterRecent = document.getElementById('filter-recent') as HTMLSpanElement | null;
     const filterPopular = document.getElementById('filter-popular') as HTMLSpanElement | null;
     const filterConnected = document.getElementById('filter-connected') as HTMLSpanElement | null;
 
-    // Si falta algun element, cancel·lem l'execució per evitar errors al navegador
+ 
     if (!searchInput || !gridContainer || !filterRecent || !filterPopular || !filterConnected) return;
 
-    // Estats de la pàgina (Buscador buit i ordenat per Popular per defecte)
+    
     let currentSearchTerm: string = '';
     let currentSort: SortOption = 'popular'; 
 
-    // Funció encarregada de processar les dades i pintar-les a la pantalla
     const renderGrid = (): void => {
         
-        // Pas 1: Filtrem els usuaris que coincideixen amb el nom escrit
         const searchedUsers = sortUsersByName(alumniData, currentSearchTerm);
         
-        // Pas 2: Ordenem el resultat de la cerca segons el filtre actiu
         const finalUsers = sortUsersByOption(searchedUsers, currentSort);
 
-        // Si la cerca no dóna cap resultat, mostrem un missatge d'avís
         if (finalUsers.length === 0) {
             gridContainer.innerHTML = `
                 <p class="no-results-message">
@@ -71,7 +61,6 @@ export function NetworkingPageLogic(): void {
             return;
         }
 
-        // Generem i injectem el codi HTML per a cada targete d'usuari
         gridContainer.innerHTML = finalUsers.map((p: User) => `
             <div class="desktop-profile-card">
                 <h3>${p.name}</h3>
@@ -90,42 +79,34 @@ export function NetworkingPageLogic(): void {
         `).join('');
     };
 
-    // --- ESCOUTADORS D'ESDEVENIMENTS (EVENT LISTENERS) ---
-
-    // Escoltem cada vegada que l'usuari tecleja una lletra al cercador
     searchInput.addEventListener('input', (e: Event) => {
         const target = e.target as HTMLInputElement;
         currentSearchTerm = target.value;
-        renderGrid(); // Repintem la quadrícula
+        renderGrid(); 
     });
 
-    // Funció interna per gestionar visualment quina pestanya té la línia rosa subratllada
     const setActiveButton = (activeBtn: HTMLSpanElement): void => {
         [filterRecent, filterPopular, filterConnected].forEach(btn => btn?.classList.remove('active'));
         activeBtn.classList.add('active');
     };
 
-    // Clic a "Recent Activity"
     filterRecent.addEventListener('click', () => {
         currentSort = 'recent';
         setActiveButton(filterRecent);
         renderGrid();
     });
 
-    // Clic a "Popular"
     filterPopular.addEventListener('click', () => {
         currentSort = 'popular';
         setActiveButton(filterPopular);
         renderGrid();
     });
 
-    // Clic a "Most Connected"
     filterConnected.addEventListener('click', () => {
         currentSort = 'connected';
         setActiveButton(filterConnected);
         renderGrid();
     });
 
-    // Executem el primer renderitzat per defecte en obrir la pàgina
     renderGrid();
 }

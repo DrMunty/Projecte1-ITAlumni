@@ -1,7 +1,3 @@
-/* ==========================================================================
-   SECOND NAVBAR (NETWORKING & JOBS)
-   ========================================================================== */
-
 .second-desktop-navbar {
     display: flex;
     justify-content: space-between;
@@ -9,16 +5,14 @@
     padding: 0 40px;
     height: 70px;
     background-color: var(--color-white);
-    font-family: inherit; /* Hereda la font del body global */
+    font-family: inherit;
     box-sizing: border-box;
 }
 
-/* --- PART ESQUERRA --- */
 .second-nav-left {
     display: flex;
     align-items: center;
     gap: 15px;
-    /* Eliminem el flex: 1 perquè no empenyi el menú cap al centre de la pantalla */
 }
 
 .second-nav-logo {
@@ -31,14 +25,13 @@
     color: var(--color-text-main);
 }
 
-/* --- PART CENTRAL --- */
 .second-nav-center {
     display: flex;
     align-items: center;
     gap: 30px;
     list-style: none;
-    margin: 0 0 0 70px; /* Marge esquerre per separar-ho del logo */
-    margin-right: auto; /* Empeny la part dreta cap al final, deixant els links a l'esquerra */
+    margin: 0 0 0 70px;
+    margin-right: auto;
     padding: 0;
     height: 100%; 
 }
@@ -50,9 +43,9 @@
 }
 
 .second-nav-links a {
-    position: relative; /* Vital perquè l'animació ::after quedi sota el text */
+    position: relative;
     text-decoration: none;
-    color: var(--color-text-main); /* Unificat amb el gris fosc corporatiu */
+    color: var(--color-text-main);
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
@@ -65,7 +58,6 @@
     color: var(--color-primary);
 }
 
-/* L'animació del subratllat (::after) */
 .second-nav-links a::after {
     content: "";
     position: absolute;
@@ -79,13 +71,11 @@
     transition: width 0.3s ease;
 }
 
-/* Quan passem el ratolí o estem a la pàgina activa, la línia creix */
 .second-nav-links a.active::after,
 .second-nav-links a:hover::after {
-    width: 100%; /* Ho he posat al 100% per defecte, si vols que quedi més curt torna-ho a canviar a 70% */
+    width: 100%;
 }
 
-/* --- PART DRETA --- */
 .second-nav-right {
     display: flex;
     align-items: center;

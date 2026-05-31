@@ -3,7 +3,6 @@ import type { Job } from "../../components/classes/Job";
 import type { JobFilters } from '../../components/classes/JobFilters';
 import { filterJobs } from "../../components/global/jobFilterFunction";
 
-// Assegurem el tipatge de les dades del JSON
 const jobData: Job[] = jobDataRaw as Job[];
 
 export function createDesktopJobsPage(): string {
@@ -70,7 +69,6 @@ export function jobsLogic(): void {
 
   if (!searchInput || !filterStack || !filterContract || !filterRemote || !gridContainer) return;
 
-  // 2. Estado centralizado de los filtros
   const currentFilters: JobFilters = {
     searchTerm: "",
     stack: "All",
@@ -113,7 +111,6 @@ export function jobsLogic(): void {
       .join("");
   };
 
-  // 4. Listeners para actualizar el estado y repintar
   searchInput.addEventListener("input", (e: Event) => {
     currentFilters.searchTerm = (e.target as HTMLInputElement).value;
     renderGrid();

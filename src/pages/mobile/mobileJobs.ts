@@ -1,12 +1,10 @@
 import jobDataRaw from '../../data/jobs.json';
 import type { Job } from '../../components/classes/Job';
 import type { JobFilters } from '../../components/classes/JobFilters';
-
 import { filterJobs } from '../../components/global/jobFilterFunction';
 
 const jobData: Job[] = jobDataRaw as Job[];
 
-// 1. L'ESQUELET HTML (Net de CSS inline)
 export function createMobileJobLayout(): string {
     return `
         <main class="job-content">

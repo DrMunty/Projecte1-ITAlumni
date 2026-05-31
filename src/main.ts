@@ -1,6 +1,3 @@
-// ==========================================
-// 1. IMPORTS D'ESTILS (CSS)
-// ==========================================
 import '../styles/global/variables.css'
 import '../styles/desktop/navbar.css';
 import '../styles/desktop/secondNavbar.css'; 
@@ -15,24 +12,14 @@ import '../styles/mobile/mobileNetworking.css';
 import '../styles/mobile/mobileJobs.css';
 import '../styles/mobile/mobileProfile.css';
 
-// ==========================================
-// 2. IMPORTS DE COMPONENTS D'ESCRIPTORI (PC)
-// ==========================================
 import { createNavbar } from './components/desktop/navbar';             
 import { createSecondNavbar } from './components/desktop/secondNavbar'; 
 import { createHomePage } from './pages/desktop/Home';
 import { createFooter } from './components/desktop/footer';
-
 import { createDesktopRegisterPage } from './pages/desktop/desktopLogin';
-// Importem HTML i Lògica de la secció de Networking (PC)
 import { createNetworkingPage, NetworkingPageLogic } from './pages/desktop/desktopNetworking';
-
-// Importem HTML i Lògica de la secció de Jobs (PC)
 import { createDesktopJobsPage, jobsLogic } from './pages/desktop/desktopJobs';
 
-// ==========================================
-// 3. IMPORTS DE COMPONENTS DE MÒBIL
-// ==========================================
 import { createMobileSplashPage } from './pages/mobile/mobileSplash';
 import { createMobileHeader } from './components/mobile/mobileHeader';
 import { createMobileSearchBar } from './components/mobile/mobileSearchBar';
@@ -61,9 +48,7 @@ function renderApp(): void {
     }
 
     if (isMobile) {
-        // ==========================================
-        // VISTA MÒBIL
-        // ==========================================
+        
         if (currentRoute === 'splash') {
             app.innerHTML = createMobileSplashPage();
             
@@ -94,7 +79,6 @@ function renderApp(): void {
         let currentContent = '';
         let searchPlaceholder = 'Search pages';
 
-        // Triem el contingut mòbil segons la ruta activa
         if (currentRoute === 'home') {
             currentTitle = 'Home';
             currentContent = createMobileHomeLayout();
@@ -112,7 +96,6 @@ function renderApp(): void {
             currentContent = createMobileProfilePage();
         }
 
-        // Injectem l'estructura de mòbil
         app.innerHTML = `
             ${createMobileHeader(currentTitle)}
             ${currentRoute !== 'profile' ? createMobileSearchBar(searchPlaceholder): ''}
@@ -120,12 +103,11 @@ function renderApp(): void {
             ${createMobileNavbar(currentRoute)}
         `;
 
-        // Activem els clics de la barra inferior de mòbil
         setupMobileListeners();
         if (currentRoute === 'home'){
             MobileHomeLogic();
         }
-        // Si som a networking mòbil, engeguem la seva lògica interactiva de cerca
+
         else if (currentRoute === 'networking') {
             NetworkingMobilePageLogic();
         }
@@ -135,11 +117,7 @@ function renderApp(): void {
         }
 
         } else {
-        // ==========================================
-        // VISTA ESCRIPTORI (PC)
-        // ==========================================
-        
-        // PAS A: Decidim quina de les dues Navbars pintem
+
         if (currentRoute === 'register'){
             app.innerHTML = createDesktopRegisterPage();
 
@@ -154,45 +132,34 @@ function renderApp(): void {
         else {
         let activeNavbar = '';
         if (currentRoute === 'home') {
-            activeNavbar = createNavbar(); // La de la Home principal
+            activeNavbar = createNavbar();
         } else {
-            activeNavbar = createSecondNavbar(currentRoute); // La segona Navbar per a aplicació interna
+            activeNavbar = createSecondNavbar(currentRoute);
         }
 
-        // PAS B: Pintem el marc estructural d'escriptori
         app.innerHTML = `
             ${activeNavbar}
             <div id="desktop-container"></div>
             ${createFooter()}
         `;
 
-        // PAS C: Injectem el contingut dinàmic i encenem els motors lògics de TypeScript
         const container = document.getElementById('desktop-container') as HTMLDivElement | null;
         if (container) {
             if (currentRoute === 'home') {
                 container.innerHTML= createHomePage();
             } else if (currentRoute === 'networking') {
-                // Injecció de l'esquelet de Xarxa + Activació de filtres i cerca per nom
                 container.innerHTML = createNetworkingPage();
                 NetworkingPageLogic();
-                
             } else if (currentRoute === 'jobs') {
-                // Injecció de l'esquelet de Feina + Activació dels 3 desplegables combinats
                 container.innerHTML = createDesktopJobsPage();
                 jobsLogic(); 
             }
         }
     }
         
-        // PAS D: Activem els escoltadors de clics de la Navbar superior de PC
         setupDesktopListeners(); 
     }
 }
-
-// ==========================================
-// 5. ESCOUTADORS DE CLICS (EVENT LISTENERS)
-// ==========================================
-
 const setupMobileListeners = (): void => {
 
     document.getElementById('btn-networking')?.addEventListener('click', (e) => {
@@ -269,13 +236,7 @@ const setupDesktopListeners = (): void => {
     });
 };
 
-// ==========================================
-// 6. INICIALITZACIÓ DE L'APLICACIÓ
-// ==========================================
 if (app) {
-    // Execució inicial en carregar la pàgina per primer cop
     renderApp();
-    
-    // Escultador adaptatiu per si l'usuari canvia la mida de la finestra o gira el dispositiu
     window.addEventListener('resize', renderApp);
 }

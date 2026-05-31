@@ -1,7 +1,3 @@
-/* ==========================================================================
-   PÀGINA DE REGISTRE / LOGIN
-   ========================================================================== */
-
 .register-page-container {
     width: 100%;
     min-height: 100vh;
@@ -31,7 +27,6 @@
     box-sizing: border-box;
 }
 
-/* --- BOTÓ TANCAR (X) --- */
 .close-register-btn {
     position: absolute;
     top: 24px;
@@ -52,7 +47,6 @@
     color: var(--color-text-main);
 }
 
-/* --- TEXTOS CAPÇALERA --- */
 .register-title {
     font-size: 32px;
     font-weight: 700;
@@ -68,7 +62,6 @@
     text-align: center;
 }
 
-/* --- FORMULARI --- */
 .register-form {
     display: flex;
     flex-direction: column;
@@ -115,7 +108,6 @@
     color: var(--color-text-light);
 }
 
-/* --- CHECKBOX --- */
 .checkbox-group {
     display: flex;
     align-items: center;
@@ -137,7 +129,6 @@
     cursor: pointer;
 }
 
-/* --- BOTÓ PRINCIPAL --- */
 .btn-register-main {
     width: 100%;
     height: 48px;
@@ -156,7 +147,6 @@
     background-color: var(--color-primary-hover);
 }
 
-/* --- SEPARADOR "O" --- */
 .divider {
     display: flex;
     align-items: center;
@@ -177,7 +167,6 @@
     padding: 0 16px;
 }
 
-/* --- BOTONS SOCIALS --- */
 .social-buttons-container {
     display: flex;
     flex-direction: column;
@@ -231,7 +220,6 @@
     color: #3B82F6; 
 }
 
-/* --- ENLLAÇ LOGIN INFERIOR --- */
 .login-prompt {
     margin-top: 40px;
     text-align: center;
@@ -251,9 +239,6 @@
     text-decoration: underline;
 }
 
-/* ==========================================================================
-   RESPONSIVE MÒBIL
-   ========================================================================== */
 @media (max-width: 768px) {
     
     .register-page-container {
