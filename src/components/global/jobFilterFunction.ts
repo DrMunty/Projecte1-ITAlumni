@@ -1,4 +1,5 @@
-import type {Job, JobFilters} from '../classes/Job';
+import type { Job } from '../classes/Job';
+import type { JobFilters } from '../classes/JobFilters';
 
 export function filterJobs(jobs: Job[], currentFilters: JobFilters): Job[] {
     return jobs.filter(job => {
