@@ -55,7 +55,7 @@ function renderApp(): void {
     
     const isMobile = window.innerWidth <= 768;
 
-    if (!isMobile && currentRoute === 'splash') {
+    if (!isMobile && (currentRoute === 'splash' || currentRoute === 'profile')) {
         currentRoute = 'home';
     }
 
