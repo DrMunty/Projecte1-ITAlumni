@@ -5,6 +5,7 @@ import '../styles/desktop/navbar.css';
 import '../styles/desktop/secondNavbar.css'; 
 import '../styles/desktop/home.css';
 import '../styles/desktop/footer.css';
+import '../styles/mobile/mobileSplash.css'
 import '../styles/desktop/login.css';
 import '../styles/desktop/networking.css'; 
 import '../styles/desktop/jobs.css';
@@ -31,6 +32,7 @@ import { createDesktopJobsPage, jobsLogic } from './pages/desktop/desktopJobs';
 // ==========================================
 // 3. IMPORTS DE COMPONENTS DE MÒBIL
 // ==========================================
+import { createMobileSplashPage } from './pages/mobile/mobileSplash';
 import { createMobileHeader } from './components/mobile/mobileHeader';
 import { createMobileSearchBar } from './components/mobile/mobileSearchBar';
 import { createMobileNavbar } from './components/mobile/mobileNavbar';
@@ -41,22 +43,40 @@ import { createMobileJobLayout } from './pages/mobile/mobileJobs';
 import { mobileJobLogic } from './pages/mobile/mobileJobs';
 import { createMobileProfilePage } from './pages/mobile/mobileProfile';
 
-// ==========================================
 const app = document.querySelector<HTMLDivElement>('#app');
-let currentRoute: 'home' | 'networking' | 'jobs' | 'profile' | 'register' = 'home';
+const isMobileDevice = window.innerWidth <= 768;
+const hasVisitedBefore = localStorage.getItem('hasVisitedXLUMNI');
 
+let currentRoute: 'splash' | 'home' | 'networking' | 'jobs' | 'profile' | 'register' = 
+    (isMobileDevice && !hasVisitedBefore) ? 'splash' : 'home';
 
 function renderApp(): void {
     if (!app) return;
-
-    // Detectem si el dispositiu és un mòbil (pantalles iguals o menors a 768px)
+    
     const isMobile = window.innerWidth <= 768;
+
+    if (!isMobile && currentRoute === 'splash') {
+        currentRoute = 'home';
+    }
 
     if (isMobile) {
         // ==========================================
         // VISTA MÒBIL
         // ==========================================
-        
+        if (currentRoute === 'splash') {
+            app.innerHTML = createMobileSplashPage();
+            
+            document.getElementById('btn-splash-join')?.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                localStorage.setItem('hasVisitedXLUMNI', 'true');
+                
+                currentRoute = 'register'; 
+                renderApp();
+                window.scrollTo(0, 0);
+            });
+            return;
+        }
         if (currentRoute === 'register') {
             app.innerHTML = createDesktopRegisterPage();
             
