@@ -1,32 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap');
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    background-color: #FFFFFF;
-    font-family: "Source Sans 3", sans-serif;
-}
+/* ==========================================================================
+   DESKTOP NAVBAR
+   ========================================================================== */
 
 .main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 5%;
-    border-bottom: 1px solid #F3F4F6;
-    background-color: #FFFFFF;
+    border-bottom: 1px solid var(--color-bg-light);
+    background-color: var(--color-white);
 }
-
-
 
 .nav-left {
     display: flex;
     align-items: center;
     gap: 200px; 
 }
+
 .nav_links {
     list-style: none;
     display: flex;
@@ -42,19 +32,17 @@ body {
 .nav_links li a {
     display: inline-block;
     padding: 10px 16px;
-    color: #565E6C;
+    color: var(--color-text-muted);
     font-weight: 600;
     text-decoration: none;
     cursor: pointer;
     transition: color 0.3s ease;
 }
 
-
 .nav_links li a.active,
 .nav_links li a:hover {
-    color: #DF007F;
+    color: var(--color-primary);
 }
-
 
 .nav_links li a::after {
     content: "";
@@ -64,7 +52,7 @@ body {
     transform: translateX(-50%); 
     width: 0; 
     height: 3px;
-    background: #DF007F;
+    background: var(--color-primary);
     border-radius: 4px;
     transition: width 0.3s ease;
 }
@@ -74,21 +62,20 @@ body {
     width: 70%; 
 }
 
-
-
+/* --- ACCIONS (Botons) --- */
 .nav_actions {
     display: flex;
     gap: 15px;
     align-items: center;
 }
 
-
-.nav-btn-outline, .nav-btn-full {
+.nav-btn-outline, 
+.nav-btn-full {
     padding: 10px 20px;
     border-radius: 8px; 
     font-size: 14px;
     font-weight: 600;
-    font-family: "Source Sans 3", sans-serif;
+    font-family: inherit; /* Hereda la font del body global */
     cursor: pointer;
     transition: all 0.3s ease;
     display: inline-flex;
@@ -98,18 +85,19 @@ body {
 }
 
 .nav-btn-outline {
-    border: 1px solid #DF007F;
-    color: #DF007F;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
     background: transparent;
 }
 
 .nav-btn-full {
-    background: linear-gradient(90deg, #873AAA, #DF007F);
-    color: white;
+    background: linear-gradient(90deg, var(--color-purple), var(--color-primary));
+    color: var(--color-white);
     border: none;
 }
 
-.nav-btn-full:hover, .nav-btn-outline:hover {
+.nav-btn-full:hover, 
+.nav-btn-outline:hover {
     transform: translateY(-2px);
     filter: brightness(1.1);
     box-shadow: 0 4px 10px rgba(223, 0, 127, 0.15);
@@ -121,9 +109,9 @@ body {
     object-fit: contain;
 }
 
-
+/* --- LOGO --- */
 .logo {
-    height: 35px; /* Ajustado para que quede proporcional a los botones */
+    height: 35px;
     width: auto;
     cursor: pointer;
     transition: filter 0.3s ease;
