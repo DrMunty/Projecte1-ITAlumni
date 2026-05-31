@@ -1,6 +1,7 @@
 // ==========================================
 // 1. IMPORTS D'ESTILS (CSS)
 // ==========================================
+import '../styles/global/variables.css'
 import '../styles/desktop/navbar.css';
 import '../styles/desktop/secondNavbar.css'; 
 import '../styles/desktop/home.css';

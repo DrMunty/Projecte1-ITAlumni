@@ -1,0 +1,17 @@
+:root {
+  --footer-bg: #0f172a; 
+  --footer-text: #ffffff; 
+  --footer-grey-text: #94a3b8; 
+  --footer-input-bg: #1e293b; 
+  --footer-input-placeholder: #64748b; 
+  --footer-border-color: #334155;
+  --color-primary: #DF007F;
+  --color-purple: #873AAA; 
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
