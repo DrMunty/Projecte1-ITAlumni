@@ -1,3 +1,7 @@
+/* ==========================================================================
+   PÀGINA DE REGISTRE / LOGIN
+   ========================================================================== */
+
 .register-page-container {
     width: 100%;
     min-height: 100vh;
@@ -14,7 +18,7 @@
 }
 
 .register-card {
-    background-color: #FFFFFF;
+    background-color: var(--color-white);
     width: 100%;
     max-width: 540px; 
     min-height: 100vh; 
@@ -27,6 +31,7 @@
     box-sizing: border-box;
 }
 
+/* --- BOTÓ TANCAR (X) --- */
 .close-register-btn {
     position: absolute;
     top: 24px;
@@ -34,7 +39,7 @@
     background: none;
     border: none;
     font-size: 22px;
-    color: #9095A0;
+    color: var(--color-text-light);
     cursor: pointer;
     transition: color 0.2s;
     padding: 8px;
@@ -44,24 +49,26 @@
 }
 
 .close-register-btn:hover {
-    color: #171A1F;
+    color: var(--color-text-main);
 }
 
+/* --- TEXTOS CAPÇALERA --- */
 .register-title {
     font-size: 32px;
     font-weight: 700;
-    color: #171A1F;
+    color: var(--color-text-main);
     margin: 0 0 12px 0;
     text-align: center;
 }
 
 .register-subtitle {
     font-size: 14px;
-    color: #171A1F;
+    color: var(--color-text-main);
     margin: 0 0 40px 0;
     text-align: center;
 }
 
+/* --- FORMULARI --- */
 .register-form {
     display: flex;
     flex-direction: column;
@@ -71,7 +78,7 @@
 .input-group {
     display: flex;
     align-items: center;
-    background-color: #F3F4F6;
+    background-color: var(--color-bg-light);
     border-radius: 6px;
     margin-bottom: 16px;
     padding: 0 16px;
@@ -81,8 +88,8 @@
 }
 
 .input-group:focus-within {
-    border-color: #DF007F; 
-    background-color: #FFFFFF;
+    border-color: var(--color-primary); 
+    background-color: var(--color-white);
 }
 
 .input-icon {
@@ -100,14 +107,15 @@
     outline: none;
     font-family: inherit;
     font-size: 14px;
-    color: #171A1F;
+    color: var(--color-text-main);
     height: 100%;
 }
 
 .register-input::placeholder {
-    color: #9095A0;
+    color: var(--color-text-light);
 }
 
+/* --- CHECKBOX --- */
 .checkbox-group {
     display: flex;
     align-items: center;
@@ -119,21 +127,22 @@
     margin-right: 12px;
     width: 18px;
     height: 18px;
-    accent-color: #DF007F;
+    accent-color: var(--color-primary);
     cursor: pointer;
 }
 
 .checkbox-group label {
     font-size: 13px;
-    color: #565E6C;
+    color: var(--color-text-muted);
     cursor: pointer;
 }
 
+/* --- BOTÓ PRINCIPAL --- */
 .btn-register-main {
     width: 100%;
     height: 48px;
-    background-color: #DF007F;
-    color: #FFFFFF;
+    background-color: var(--color-primary);
+    color: var(--color-white);
     border: none;
     border-radius: 6px;
     font-family: inherit;
@@ -144,14 +153,15 @@
 }
 
 .btn-register-main:hover {
-    background-color: #C2006F;
+    background-color: var(--color-primary-hover);
 }
 
+/* --- SEPARADOR "O" --- */
 .divider {
     display: flex;
     align-items: center;
     text-align: center;
-    color: #9095A0;
+    color: var(--color-text-light);
     font-size: 14px;
     margin: 32px 0;
 }
@@ -160,13 +170,14 @@
 .divider::after {
     content: '';
     flex: 1;
-    border-bottom: 1px solid #DEE1E6;
+    border-bottom: 1px solid var(--color-border);
 }
 
 .divider span {
     padding: 0 16px;
 }
 
+/* --- BOTONS SOCIALS --- */
 .social-buttons-container {
     display: flex;
     flex-direction: column;
@@ -199,9 +210,15 @@
     margin-right: 10px;
 }
 
+.btn-social .social-icon,
+.btn-social .social-icon:hover {
+    transform: none !important;
+    opacity: 1 !important;
+}
+
 .btn-apple {
-    background-color:#949292;
-    color: #FFFFFF;
+    background-color: #949292;
+    color: var(--color-white);
 }
 
 .btn-google {
@@ -214,16 +231,17 @@
     color: #3B82F6; 
 }
 
+/* --- ENLLAÇ LOGIN INFERIOR --- */
 .login-prompt {
     margin-top: 40px;
     text-align: center;
     font-size: 14px;
-    color: #171A1F;
+    color: var(--color-text-main);
     font-weight: 500;
 }
 
 .login-link {
-    color: #DF007F;
+    color: var(--color-primary);
     text-decoration: none;
     font-weight: 600;
     margin-left: 6px;
@@ -233,11 +251,14 @@
     text-decoration: underline;
 }
 
+/* ==========================================================================
+   RESPONSIVE MÒBIL
+   ========================================================================== */
 @media (max-width: 768px) {
     
     .register-page-container {
         background-image: none; 
-        background-color: #FFFFFF;
+        background-color: var(--color-white);
     }
 
     .register-card {
