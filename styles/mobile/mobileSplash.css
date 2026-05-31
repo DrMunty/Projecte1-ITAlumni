@@ -3,10 +3,9 @@
     flex-direction: column;
     justify-content: space-between;
     height: 100vh;
-    background-color: #FFFFFF;
+    background-color: var(--color-white);
     padding: 40px 24px;
     box-sizing: border-box;
-    font-family: "Source Sans 3", sans-serif;
     z-index: 9999;
     position: fixed; 
     top: 0;
@@ -31,7 +30,7 @@
 
 .splash-subtitle {
     font-size: 18px;
-    color: #171A1F;
+    color: var(--color-text-main);
     line-height: 1.5;
     margin: 0;
 }
@@ -46,8 +45,8 @@
     height: 52px;
     border: none;
     border-radius: 8px;
-    background: linear-gradient(to right, #8e44ad, #d81b60);
-    color: #FFFFFF;
+    background: linear-gradient(90deg, var(--color-purple), var(--color-primary));
+    color: var(--color-white);
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
