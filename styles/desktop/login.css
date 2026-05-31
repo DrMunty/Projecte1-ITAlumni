@@ -232,3 +232,41 @@
 .login-link:hover {
     text-decoration: underline;
 }
+
+@media (max-width: 768px) {
+    
+    .register-page-container {
+        background-image: none; 
+        background-color: #FFFFFF;
+    }
+
+    .register-card {
+        padding: 60px 20px 20px 20px;
+        box-shadow: none; 
+        justify-content: flex-start;
+    }
+
+    .close-register-btn {
+        top: 16px;
+        left: 16px;
+    }
+
+    .register-title {
+        margin-top: 20px;
+        font-size: 28px;
+    }
+
+    .register-subtitle {
+        display: none; 
+    }
+
+    .input-group, 
+    .btn-register-main, 
+    .btn-social {
+        height: 52px; 
+    }
+    
+    .divider {
+        margin: 24px 0;
+    }
+}

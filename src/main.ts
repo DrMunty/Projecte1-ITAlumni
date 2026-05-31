@@ -56,6 +56,19 @@ function renderApp(): void {
         // ==========================================
         // VISTA MÒBIL
         // ==========================================
+        
+        if (currentRoute === 'register') {
+            app.innerHTML = createDesktopRegisterPage();
+            
+            document.getElementById('btn-close-register')?.addEventListener('click', (e) => {
+                e.preventDefault();
+                currentRoute = 'home'; 
+                renderApp();          
+                window.scrollTo(0, 0);
+            });
+            return;
+        }
+
         let currentTitle = '';
         let currentContent = '';
         let searchPlaceholder = 'Search pages';
